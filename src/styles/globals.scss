@@ -1,0 +1,14 @@
+@use 'tailwindcss';
+
+// @use '~@/styles/variables';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	font-family: var(--font-dm-sans), sans-serif;
+}
+body {
+	background-color: rgb(255, 255, 255);
+}
