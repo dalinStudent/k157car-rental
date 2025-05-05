@@ -1,0 +1,19 @@
+h1,
+h2,
+h3 {
+  &.font-bold {
+    font-weight: 700;
+  }
+}
+
+h4,
+a,
+p,
+span {
+  &.font-bold {
+    font-weight: 600;
+  }
+  &.text-base {
+    line-height: 1.8rem;
+  }
+}
