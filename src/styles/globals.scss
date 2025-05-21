@@ -1,6 +1,7 @@
 @use 'tailwindcss';
 
-// @use '~@/styles/variables';
+@use '~@/styles/variables';
+@use '~@/styles/styles';
 
 @tailwind base;
 @tailwind components;

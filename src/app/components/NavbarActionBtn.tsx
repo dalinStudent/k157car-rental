@@ -3,12 +3,16 @@ import { useLocale } from "next-intl";
 import Image from "next/image";
 
 interface Props {
-    showSearch: boolean;
-    setShowSearch: React.Dispatch<React.SetStateAction<boolean>>;
-    setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
-  }
+  showSearch: boolean;
+  setShowSearch: React.Dispatch<React.SetStateAction<boolean>>;
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+}
 
-export const NavbarActionBtn = ({ showSearch, setShowSearch, setSearchQuery }: Props) => {
+export const NavbarActionBtn = ({
+  showSearch,
+  setShowSearch,
+  setSearchQuery,
+}: Props) => {
   const locale = useLocale() as "en" | "km" | "zh";
   const items = NavbarActionItem[locale];
 
@@ -37,14 +41,18 @@ export const NavbarActionBtn = ({ showSearch, setShowSearch, setSearchQuery }: P
   return (
     <div className="flex gap-3 justify-end">
       {items.map((item) => (
-        <div key={item.name} className="">
-          <Image
-            src={item.iconSrc}
-            alt={item.name}
-            width={16}
-            height={16}
-            onClick={() => handleAction(item)}
-          />
+        <div
+          key={item.name}
+          className="rounded-full size-[35px] bg-white/30 backdrop-blur flex items-center justify-center"
+        >
+          <div className="relative size-[20px] cursor-pointer">
+            <Image
+              src={item.iconSrc}
+              alt={item.name}
+              fill
+              onClick={() => handleAction(item)}
+            />
+          </div>
         </div>
       ))}
     </div>

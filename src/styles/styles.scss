@@ -1,0 +1,12 @@
+@use '~@/styles/variables';
+@use '~@/styles/tailwinds';
+
+.button-item {
+    background: #34495e;
+    color: #fff;
+}
+
+.ant-popover-content {
+    margin-top: 10px;
+    width: 200px;
+}
