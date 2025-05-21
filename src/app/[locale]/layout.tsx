@@ -16,9 +16,6 @@ export const metadata: Metadata = {
   description: "Canadia Bank Website",
 };
 
-console.log('Supported locales:', routing.locales);
-
-
 export default async function RootLayout(props: {
 	children: React.ReactNode;
 	params: Promise<{ locale: string }>;
@@ -28,7 +25,6 @@ export default async function RootLayout(props: {
   if (!routing.locales.includes(locale)) {
     redirect("/en");
   }
-  console.log("locale", locale);
 
   setRequestLocale(locale);
 

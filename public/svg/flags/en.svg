@@ -1,0 +1,46 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Flag_of_the_United_Kingdom_(1-2) 1" clip-path="url(#clip0_1205_97)">
+<g id="Clip path group">
+<mask id="mask0_1205_97" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-16" y="0" width="65" height="32">
+<g id="s">
+<path id="Vector" d="M-15.999 0V32H48.001V0H-15.999Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_1205_97)">
+<g id="Group">
+<path id="Vector_2" d="M-15.999 0V32H48.001V0H-15.999Z" fill="#012169"/>
+<g id="Vector_3">
+<path d="M-15.999 0L48.001 32L-15.999 0ZM48.001 0L-15.999 32L48.001 0Z" fill="black"/>
+<path d="M-15.999 0L48.001 32M48.001 0L-15.999 32" stroke="white" stroke-width="3.49091"/>
+</g>
+<g id="Clip path group_2">
+<mask id="mask1_1205_97" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-16" y="0" width="65" height="32">
+<g id="t">
+<path id="Vector_4" d="M16.001 16H48.001V32L16.001 16ZM16.001 16V32H-15.999L16.001 16ZM16.001 16H-15.999V0L16.001 16ZM16.001 16V0H48.001L16.001 16Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask1_1205_97)">
+<g id="Vector_5">
+<path d="M-15.999 0L48.001 32L-15.999 0ZM48.001 0L-15.999 32L48.001 0Z" fill="black"/>
+<path d="M-15.999 0L48.001 32M48.001 0L-15.999 32" stroke="#C8102E" stroke-width="2.32727"/>
+</g>
+</g>
+</g>
+<g id="Vector_6">
+<path d="M16.001 0V32V0ZM-15.999 16H48.001H-15.999Z" fill="black"/>
+<path d="M16.001 0V32M-15.999 16H48.001" stroke="white" stroke-width="5.81818"/>
+</g>
+<g id="Vector_7">
+<path d="M16.001 0V32V0ZM-15.999 16H48.001H-15.999Z" fill="black"/>
+<path d="M16.001 0V32M-15.999 16H48.001" stroke="#C8102E" stroke-width="3.49091"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_1205_97">
+<rect width="64" height="32" fill="white" transform="translate(-16)"/>
+</clipPath>
+</defs>
+</svg>

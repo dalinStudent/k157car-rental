@@ -14,11 +14,16 @@ export interface NavbarItem {
 export const NavbarItems: Record<"en" | "km" | "zh", NavbarItem[]> = {
   en: [
     {
-      name: "Service",
-    },
-    {
       name: "About Us",
       href: "/about-us",
+    },
+    {
+      name: "How it works",
+      href: "/about-us",
+    },
+    {
+      name: "Service",
+      href: "/faqs",
     },
     {
       name: "FAQs",
@@ -27,28 +32,38 @@ export const NavbarItems: Record<"en" | "km" | "zh", NavbarItem[]> = {
   ],
   km: [
     {
-      name: "សេវាកម្ម",
-    },
-    {
       name: "អំពីពួកយើង",
       href: "/about-us",
     },
     {
+      name: "របៀបដែលវាដំណើរការ",
+      href: "/about-us",
+    },
+    {
+      name: "សេវាកម្ម",
+      href: "/service",
+    },
+    {
       name: "FAQs",
-      href: "/faqs",
+      href: "/about-us",
     },
   ],
   zh: [
     {
-      name: "សេវាកម្ម",
+      name: "关于我们",
+      href: "/about-us",
     },
     {
-      name: "អំពីពួកយើង",
+      name: "工作原理",
+      href: "/faqs",
+    },
+    {
+      name: "我们的服务",
       href: "/about-us",
     },
     {
       name: "FAQs",
-      href: "/faqs",
+      href: "/about-us",
     },
   ],
 };
