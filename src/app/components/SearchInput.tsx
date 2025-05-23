@@ -17,7 +17,6 @@ export const SearchInput = ({
       <input
         type="text"
         value={value}
-        autoFocus
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         onChange={(e) => onChange(e.target.value)}

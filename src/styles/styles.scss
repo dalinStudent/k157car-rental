@@ -10,3 +10,19 @@
     margin-top: 10px;
     width: 200px;
 }
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    padding: 12px;
+}
+
+.ant-popover-inner {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }

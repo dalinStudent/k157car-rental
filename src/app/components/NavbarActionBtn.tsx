@@ -43,9 +43,9 @@ export const NavbarActionBtn = ({
       {items.map((item) => (
         <div
           key={item.name}
-          className="rounded-full size-[35px] bg-white/30 backdrop-blur flex items-center justify-center"
+          className="rounded-full size-[25px] bg-white/30 backdrop-blur flex items-center justify-center"
         >
-          <div className="relative size-[20px] cursor-pointer">
+          <div className="relative size-[16px] cursor-pointer">
             <Image
               src={item.iconSrc}
               alt={item.name}
