@@ -1,5 +1,10 @@
 import "@/styles/globals.scss";
 import "animate.css";
+import dayjs from "dayjs";
+import "dayjs/locale/en";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+dayjs.extend(localizedFormat);
+
 
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";

@@ -1,28 +1,51 @@
-@use '~@/styles/variables';
-@use '~@/styles/tailwinds';
+@use "~@/styles/variables";
+@use "~@/styles/tailwinds";
 
 .button-item {
-    background: #34495e;
-    color: #fff;
+  background: #34495e;
+  color: #fff;
 }
 
 .ant-popover-content {
-    margin-top: 10px;
-    width: 200px;
+  margin-top: 10px;
+  width: 200px;
 }
 
 .navbar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 50;
-    width: 100%;
-    padding: 12px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  padding: 12px;
 }
 
 .ant-popover-inner {
-    background: rgba(255, 255, 255, 0.1) !important;
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  }
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.filter {
+  width: 100%;
+}
+
+.hidden-datepicker {
+  position: absolute;
+  left: 0 !important;
+  top: 20 !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.date-icon {
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+}
