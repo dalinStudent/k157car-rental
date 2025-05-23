@@ -1,5 +1,5 @@
-import '../../styles/globals.scss'
-import 'animate.css';
+import "@/styles/globals.scss";
+import "animate.css";
 
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
@@ -9,19 +9,20 @@ import React from "react";
 
 import { dmSans, kantumruy, notoSans } from "../fonts";
 import { Navbar } from "../components/Navbar";
-import { routing } from '@/libs/i18nNavigation';
+import { routing } from "@/libs/i18nNavigation";
+import { BackgroundGradientAnimation } from "../components/BackgroundGradientAnimation";
 
 export const metadata: Metadata = {
-  title: "Canadia Bank Website",
-  description: "Canadia Bank Website",
+  title: "eCommerce Website",
+  description: "Look Then Buy",
 };
 
 export default async function RootLayout(props: {
-	children: React.ReactNode;
-	params: Promise<{ locale: string }>;
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
-	const { locale } = await props.params;
-  
+  const { locale } = await props.params;
+
   if (!routing.locales.includes(locale)) {
     redirect("/en");
   }
@@ -41,11 +42,17 @@ export default async function RootLayout(props: {
           : dmSans.className
       }
     >
-      <body className="bg-red-500 text-white">
-        <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          {props.children}
-        </NextIntlClientProvider>
+      <body className="relative text-white">
+        <div className="absolute inset-0 z-0">
+          <BackgroundGradientAnimation />
+        </div>
+
+        <div className="relative z-10">
+          <NextIntlClientProvider messages={messages}>
+            <Navbar />
+            {props.children}
+          </NextIntlClientProvider>
+        </div>
       </body>
     </html>
   );

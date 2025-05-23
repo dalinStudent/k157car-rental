@@ -19,7 +19,7 @@ export const Localization = () => {
                 ${locale === lang.code ? "button-item" : ""}
                 ${
                   locale !== lang.code
-                    ? "hover:navbar-gradient-text hover:bg-[#F5F5F5]"
+                    ? "hover:navbar-gradient-text hover:bg-[rgba(52,73,94,0.4)]"
                     : ""
                 } 
                 flex w-full items-center space-x-3 rounded-xl p-4 text-black

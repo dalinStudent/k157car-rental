@@ -25,12 +25,12 @@ export const Navbar = () => {
   })
 
   return (
-    <div className="sticky z-999 top-0 left-0 border-b-0 border-[rgba(0,0,0,0.05) bg-slate-300 backdrop-blur-lg py-4 px-14">
-      <div className="flex max-w-[1867px] items-center justify-between">
-        <div className="flex items-center justify-between gap-6">
+    <div className="navbar">
+      <div className="mx-auto flex w-[600px] items-center justify-between bg-white/10 backdrop-blur-xl rounded-full p-3">
+        <div className="flex items-center gap-6">
           <div className="flex gap-4 whitespace-nowrap">
             {items.map((items) => (
-              <p className="text-black" key={items.name}>
+              <p className="text-white" key={items.name}>
                 {items.name}
               </p>
             ))}

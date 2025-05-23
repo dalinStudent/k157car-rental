@@ -1,24 +1,24 @@
-import { Popover } from 'antd';
-import React from 'react';
+import { Popover } from "antd";
+import React from "react";
 
 interface CustomPopoverProps {
   content?: React.ReactNode;
   children?: React.ReactNode;
   open?: boolean;
-  trigger?: 'click' | 'hover';
+  trigger?: "click" | "hover";
   placement?:
-    | 'top'
-    | 'left'
-    | 'right'
-    | 'bottom'
-    | 'topLeft'
-    | 'topRight'
-    | 'bottomLeft'
-    | 'bottomRight'
-    | 'leftTop'
-    | 'leftBottom'
-    | 'rightTop'
-    | 'rightBottom';
+    | "top"
+    | "left"
+    | "right"
+    | "bottom"
+    | "topLeft"
+    | "topRight"
+    | "bottomLeft"
+    | "bottomRight"
+    | "leftTop"
+    | "leftBottom"
+    | "rightTop"
+    | "rightBottom";
   arrow?: boolean;
   onOpenChange?: (visible: boolean) => void;
 }
@@ -27,12 +27,11 @@ export const PopoverCustom = ({
   content,
   children,
   open,
-  trigger = 'click',
-  placement = 'top',
+  trigger = "click",
+  placement = "top",
   arrow = true,
   onOpenChange,
 }: CustomPopoverProps) => {
-
   const handlePopoverOpenChange = (visible: boolean) => {
     if (onOpenChange) {
       onOpenChange(visible);
@@ -42,7 +41,6 @@ export const PopoverCustom = ({
   return (
     <>
       {open && (
-        // eslint-disable-next-line jsx-a11y/click-events-have-key-events
         <div
           role="button"
           tabIndex={0}
@@ -62,6 +60,5 @@ export const PopoverCustom = ({
         {children}
       </Popover>
     </>
-
   );
 };

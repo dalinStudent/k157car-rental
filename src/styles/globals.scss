@@ -1,15 +1,31 @@
-@use 'tailwindcss';
+// @use 'tailwindcss';
 
-@use '~@/styles/variables';
-@use '~@/styles/styles';
+// @use '~@/styles/variables';
+// @use '~@/styles/styles';
+// @use '~@/styles/gradients';
+
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+
+// * {
+// 	font-family: var(--font-dm-sans), sans-serif;
+// }
+// body {
+// 	background-color: transparent;
+// }
+
+@use '@/styles/variables';
+@use '@/styles/styles';
+@use '@/styles/gradients';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-	font-family: var(--font-dm-sans), sans-serif;
+  font-family: var(--font-dm-sans), sans-serif;
 }
 body {
-	background-color: rgb(255, 255, 255);
+  background-color: transparent;
 }
