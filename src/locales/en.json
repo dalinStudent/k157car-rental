@@ -2,5 +2,14 @@
   "HomePage": {
     "title": "Welcome to the Home Page",
     "description": "This is the home page of our application."
+  },
+  "landing": {
+   "main_title": "The Best <highlight>Car Rental</highlight> Company Service",
+    "description": "Find the perfect ride for every journey — easy booking, great rates, and reliable service.",
+    "button": {
+      "explore": "Explore"
+    },
+    "location": "Location",
+    "booked_date": "Booking Date"
   }
 }

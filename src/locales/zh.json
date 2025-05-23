@@ -2,5 +2,14 @@
   "HomePage": {
     "title": "欢迎来到主页",
     "description": "这是我们的应用程序的主页。"
+  },
+  "landing": {
+    "main_title": "最佳汽车租赁<highlight>公司</highlight>服务",
+    "description": "为每一次旅程找到完美的出行方式——轻松预订、优惠价格、可靠服务",
+    "button": {
+      "explore": "探索"
+    },
+    "location": "地点",
+    "booked_date": "预订日期"
   }
 }

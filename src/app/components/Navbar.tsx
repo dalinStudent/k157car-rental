@@ -9,7 +9,6 @@ import { fadeIn, speedFast } from "@/configs/animate-css-classes";
 import { Localization } from "./Localization";
 import Image from "next/image";
 import { usePathname, useRouter } from "@/libs/i18nNavigation";
-import { LanguageItems } from "@/configs/lang-item";
 
 export const Navbar = () => {
   const locale = useLocale() as "en" | "km" | "zh";
