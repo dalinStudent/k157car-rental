@@ -4,12 +4,21 @@
     "description": "这是我们的应用程序的主页。"
   },
   "landing": {
-    "main_title": "最佳汽车租赁<highlight>公司</highlight>服务",
+    "main_title": "<highlight>K157</highlight>最佳汽车租赁<highlight>公司</highlight>服务",
     "description": "为每一次旅程找到完美的出行方式——轻松预订、优惠价格、可靠服务",
     "button": {
-      "explore": "探索"
+      "explore": "探索",
+      "apply": "申请"
     },
     "location": "地点",
-    "booked_date": "预订日期"
+    "booked_date": "预订日期",
+    "sort_price": "排序价格",
+    "minimum": "最低限度",
+    "maximum": "最大限度",
+    "max_price": "最高价格",
+    "condition": "健康）状况",
+    "reliable": "可靠的",
+    "affordable": "价格合理",
+    "convenient": "抱歉"
   }
-}
+} 

@@ -45,7 +45,7 @@ export const Localization = () => {
   };
 
   return (
-    <div className="">
+    <div className="px-1">
       <PopoverCustom
         trigger="click"
         arrow={false}
