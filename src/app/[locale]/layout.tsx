@@ -16,6 +16,7 @@ import { dmSans, kantumruy, notoSans } from "../fonts";
 import { Navbar } from "../components/Navbar";
 import { routing } from "@/libs/i18nNavigation";
 import { BackgroundGradientAnimation } from "../components/BackgroundGradientAnimation";
+import { WavyBackground } from "../components/WavyBackground";
 
 export const metadata: Metadata = {
   title: "eCommerce Website",
@@ -49,7 +50,8 @@ export default async function RootLayout(props: {
     >
       <body className="relative text-white">
         <div className="absolute inset-0 z-0">
-          <BackgroundGradientAnimation />
+          {/* <BackgroundGradientAnimation /> */}
+          <WavyBackground />
         </div>
 
         <div className="relative z-10">

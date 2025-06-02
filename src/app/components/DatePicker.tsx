@@ -21,7 +21,7 @@ export const DateRangePicker = ({
 
   return (
     <div ref={ref} className="relative inline-block">
-      <CalendarOutlined onClick={() => setOpen(true)} className="date-icon" />
+      <CalendarOutlined onClick={() => setOpen(true)} className="icons" />
       <span className="ml-1 text-sm text-gray-600 whitespace-nowrap">
         {value
           ? `${value[0].format("MMM D, YYYY")} - ${value[1].format(

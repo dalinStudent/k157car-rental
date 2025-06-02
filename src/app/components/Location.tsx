@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+import { AimOutlined } from "@ant-design/icons";
 import { PopoverCustom } from "./Popover";
 import { LocationItems } from "@/configs/location-item";
 import { useLocale, useTranslations } from "next-intl";
@@ -35,27 +35,20 @@ export const Location = ({ value, onChange }: LocationProps) => {
   );
 
   return (
-    <div className="flex items-center gap-2">
-      <PopoverCustom
-        open={open}
-        onOpenChange={setOpen}
-        trigger="click"
-        placement="bottomLeft"
-        content={content}
-        arrow={false}
-      >
-        <div className="flex items-center cursor-pointer gap-1">
-          <Image
-            src="/svg/icons/map.svg"
-            alt="map-icon"
-            width={16}
-            height={16}
-          />
-          <span className="text-sm text-gray-600 whitespace-nowrap flex-shrink-0">
-            {value ? `${value.replace("-", " ")}` : t("location")}
-          </span>
-        </div>
-      </PopoverCustom>
-    </div>
+    <PopoverCustom
+      open={open}
+      onOpenChange={setOpen}
+      trigger="click"
+      placement="bottomLeft"
+      content={content}
+      arrow={false}
+    >
+      <div className="flex items-center cursor-pointer gap-1">
+        <AimOutlined className="icons" />
+        <span className="text-sm text-gray-600 whitespace-nowrap flex-shrink-0">
+          {value ? `${value.replace("-", " ")}` : t("location")}
+        </span>
+      </div>
+    </PopoverCustom>
   );
 };

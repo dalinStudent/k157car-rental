@@ -20,12 +20,13 @@
   padding: 12px;
 }
 
-.ant-popover-inner {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
+// .ant-popover-inner {
+//   background: rgba(255, 255, 255, 0.1);
+//   backdrop-filter: blur(16px);
+//   border: 1px solid rgba(255, 255, 255, 0.2);
+//   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+//   transition: all 0.3s ease;
+// }
 
 .filter {
   width: 100%;
@@ -44,7 +45,7 @@
   pointer-events: none;
 }
 
-.date-icon {
+.icons {
     font-size: 16px;
     cursor: pointer;
     color: #333;

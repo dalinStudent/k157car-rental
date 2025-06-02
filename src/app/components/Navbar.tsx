@@ -5,10 +5,10 @@ import { NavbarItems } from "../../configs/navbar-items";
 import { NavbarActionBtn } from "./NavbarActionBtn";
 import { useEffect, useState } from "react";
 import { SearchInput } from "./SearchInput";
-import { fadeIn, speedFast } from "@/configs/animate-css-classes";
+import { fadeIn, speedFast, speedSlow } from "@/configs/animate-css-classes";
 import { Localization } from "./Localization";
-import Image from "next/image";
 import { usePathname, useRouter } from "@/libs/i18nNavigation";
+import clsx from "clsx";
 
 export const Navbar = () => {
   const locale = useLocale() as "en" | "km" | "zh";
@@ -24,10 +24,15 @@ export const Navbar = () => {
   })
 
   return (
-    <div className="navbar">
-      <div className="mx-auto flex w-[600px] items-center justify-between bg-white/10 backdrop-blur-xl rounded-full p-3">
-        <div className="flex items-center gap-6">
-          <div className="flex gap-4 whitespace-nowrap">
+    <div className="navbar">  
+      {/* <div className="mx-auto flex w-[600px] items-center justify-between bg-white/10 backdrop-blur-xl rounded-full p-3"> */}
+      <div className={clsx(
+          "mx-auto flex items-center justify-between bg-white/10 backdrop-blur-xl rounded-full p-2 transition-all duration-500 ease-in-out",
+          showSearch ? "w-[800px]" : "w-[600px]"
+        )}>
+
+        <div className="flex items-center gap-6 overflow-hidden">
+          <div className="flex gap-4 whitespace-nowrap p-2">
             {items.map((items) => (
               <p className="text-white" key={items.name}>
                 {items.name}
@@ -37,7 +42,7 @@ export const Navbar = () => {
         </div>
         <div className="flex items-center gap-4">
           {showSearch && (
-            <div className={`${fadeIn}`} data-wow-delay={speedFast}>
+            <div className={`${fadeIn} w-56 transition-opacity duration-500 ease-in-out`} data-wow-delay={speedSlow}>
               <SearchInput
                 value={searchQuery}
                 onChange={(val) => setSearchQuery(val)}

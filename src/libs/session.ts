@@ -30,19 +30,19 @@ export async function decrypt(session: string | undefined = '') {
 	}
 }
 
-export async function createSession(userId: number) {
-	const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
-	const session = await encrypt({ userId, expiresAt });
-	const cookieStore = await cookies();
+// export async function createSession(userId: number) {
+// 	const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+// 	const session = await encrypt({ userId, expiresAt });
+// 	const cookieStore = await cookies();
 
-	cookieStore.set('session', session, {
-		httpOnly: true,
-		secure: true,
-		expires: expiresAt,
-		sameSite: 'lax',
-		path: '/',
-	});
-}
+// 	cookieStore.set('session', session, {
+// 		httpOnly: true,
+// 		secure: true,
+// 		expires: expiresAt,
+// 		sameSite: 'lax',
+// 		path: '/',
+// 	});
+// }
 
 export const verifySession = async () => {
 	const cookie = (await cookies()).get('session')?.value;

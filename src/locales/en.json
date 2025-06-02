@@ -4,12 +4,21 @@
     "description": "This is the home page of our application."
   },
   "landing": {
-   "main_title": "The Best <highlight>Car Rental</highlight> Company Service",
+   "main_title": "The best <highlight>Car Rental</highlight> Company Service",
     "description": "Find the perfect ride for every journey — easy booking, great rates, and reliable service.",
     "button": {
-      "explore": "Explore"
+      "explore": "Explore",
+      "apply": "Apply"
     },
     "location": "Location",
-    "booked_date": "Booking Date"
+    "booked_date": "Booking Date",
+    "sort_price": "Sort Price",
+    "minimum": "Minimum",
+    "maximum": "Maximum",
+    "max_price": "Max Price",
+    "condition": "Condition",
+    "reliable": "Reliable",
+    "affordable": "Affordable",
+    "convenient": "Convenient"
   }
 }
