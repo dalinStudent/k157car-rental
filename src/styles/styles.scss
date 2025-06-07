@@ -20,14 +20,6 @@
   padding: 12px;
 }
 
-// .ant-popover-inner {
-//   background: rgba(255, 255, 255, 0.1);
-//   backdrop-filter: blur(16px);
-//   border: 1px solid rgba(255, 255, 255, 0.2);
-//   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-//   transition: all 0.3s ease;
-// }
-
 .filter {
   width: 100%;
 }
@@ -46,7 +38,90 @@
 }
 
 .icons {
-    font-size: 16px;
-    cursor: pointer;
-    color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background-color: rgb(0 107 179);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  gap: 10px;
+  border: 2px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    border-color: #fff9;
+  }
+
+  &:hover .icon {
+    transform: translate(4px);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+  }
+
+  &:hover::before {
+    animation: shine 1.5s ease-out infinite;
+  }
+}
+
+.button-category {
+  padding: 12px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: white;
+  color: #0d1117;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+  &:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+  }
+  &:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+  }
+
+  &.active {
+    background: linear-gradient(135deg, #cd202a, #ff5f6d);
+    color: white;
+    box-shadow: 0 4px 14px rgba(205, 32, 42, 0.4);
+    letter-spacing: 2px;
+  }
 }

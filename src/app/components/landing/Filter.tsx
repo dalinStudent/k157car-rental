@@ -41,9 +41,9 @@ export const Filter = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm">
+          <button className="buttons text-sm">
             {t('button.explore')}
-            <ArrowRightOutlined />
+            <span><ArrowRightOutlined /></span>
           </button>
         </div>
       </div>

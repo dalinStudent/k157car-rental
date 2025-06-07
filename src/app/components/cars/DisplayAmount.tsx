@@ -3,35 +3,37 @@ import { Car } from "@/types/car.type";
 import { formatCurrency } from "@/utils/Fomatters";
 
 type Props = {
-	size: 'xl' | 'base';
-	item: Car;
+  size: "xl" | "base";
+  item: Car;
 };
 
-export const DisplayAmount = (props: Props) => {
+export const DisplayAmount = ({ item }: Props) => {
+	const hasDiscount = item.discountAmount && item.discountType;
+	const getPrice = (base: number) =>
+	  hasDiscount
+		? item.discountType === DiscountType.Percentage
+		  ? base - (base * item.discountAmount!) / 100
+		  : base - item.discountAmount!
+		: base;
+  
+	const prices = [
+	  { label: "day", value: getPrice(item.pricePerDay) },
+	  { label: "week", value: getPrice(item.pricePerWeek) },
+	  { label: "month", value: getPrice(item.pricePerMonth) },
+	];
+  
 	return (
-		<div className="flex items-end gap-1">
-			<h3 className={`text-${props.size} text-[#0D1117] font-semibold`}>
-				{props.item.discountType && props.item.discountAmount
-					? (() => {
-							const discountedPrice = props.item.discountType === DiscountType.Percentage
-								? props.item.price - (props.item.price * props.item.discountAmount) / 100
-								: props.item.price - props.item.discountAmount;
-							return formatCurrency(discountedPrice);
-						})()
-					: formatCurrency(props.item.price)}
-			</h3>
-			{
-				props.item.discountAmount && (
-					<p
-						className={`
-							text-[#68717A] line-through
-							text-${props.size === 'xl' ? 'sm mb-0.5' : 'xs mb-[3px]'}
-						`}
-					>
-						{formatCurrency(props.item.price)}
-					</p>
-				)
-			}
-		</div>
+	  <div className="flex flex-wrap gap-2">
+		{prices.map((p) => (
+		  <span
+			key={p.label}
+			className="text-xs text-[#0D1117] bg-[#F5F5F5] rounded-full px-3 py-1"
+		  >
+			{formatCurrency(p.value)} / {p.label}
+		  </span>
+		))}
+	  </div>
 	);
-}
+  };
+  
+  
