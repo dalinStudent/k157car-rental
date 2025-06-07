@@ -8,15 +8,20 @@ import { CategoryList } from "../CategoryList";
 import { CarListItem } from "./CarListItem";
 import { CarGridItem } from "./CarGridItem";
 import { CarDetails } from "./CarDetail";
+import { Categories } from "@/data/Categories";
+import { Cars } from "@/data/Cars";
+import { fadeInUp } from "@/configs/animate-css-classes";
+import Lottie from "lottie-react";
+import lottieData from "@/public/data.json"
 
 type Props = {
   listType: ListType;
 };
 
 export const CarList = (props: Props) => {
-  const [categories, setCategories] =
-    useState<PaginatedResponse<CarCategory>>();
-  const [carList, setCarList] = useState<PaginatedResponse<Car>>();
+  const [selectedCategory, setSelectedCategory] = useState<CarCategory | null>(
+    null
+  );
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<Car | null>(null);
 
@@ -35,28 +40,66 @@ export const CarList = (props: Props) => {
     setSelectedItem(null);
   };
 
+  const categories = {
+    content: Categories,
+  };
+
+  const cars = {
+    content: Cars,
+  };
+
+  const filteredCars = selectedCategory
+    ? cars.content.filter((car) => car.category.id === selectedCategory.id)
+    : cars.content;
+
+    const popularCars = filteredCars
+  .filter(car => car.rentCount && car.rentCount > 3)
+  .sort((a, b) => b.rentCount - a.rentCount);
+
   return (
-    <div className="flex flex-col gap-4 px-4 py-10">
+    <div className="flex flex-col gap-4 px-4 py-4">
       {categories && (
         <CategoryList
           categories={categories.content}
-          onItemClick={(item: CarCategory | null) => {}}
+          onItemClick={(item) => {
+            setSelectedCategory(item);
+          }}
         />
       )}
-      {carList &&
+      {popularCars &&
         (props.listType === ListType.List ? (
-          <div className="gap-[30px] grid-cols-1">
-            {carList.content.map((item) => (
-              <CarListItem
-                key={item.id}
-                item={item}
-                onClick={() => handleOnItemClick(item)}
-              />
-            ))}
+          popularCars.length === 0 ? (
+            <div className="flex flex-col items-center justify-center text-center text-gray-500">
+            <div className="w-96">
+              <Lottie animationData={lottieData} loop autoplay />
+            </div>
+            <h3 className="text-xl font-semibold">No cars found</h3>
+            <p className="text-sm mt-2">Try selecting a different category.</p>
           </div>
+
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+              {popularCars.map((item, index) => {
+                const delay = `${index * 0.15}s`;
+                return (
+                  <div
+                    key={item.id}
+                    className={`${fadeInUp}`}
+                    style={{ animationDelay: delay }}
+                  >
+                    <CarListItem
+                      key={item.id}
+                      item={item}
+                      onClick={() => handleOnItemClick(item)}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          )
         ) : (
           <div className="grid gap-[30px] grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {carList.content.map((item) => (
+            {popularCars.map((item) => (
               <CarGridItem
                 key={item.id}
                 item={item}

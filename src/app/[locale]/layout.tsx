@@ -5,7 +5,6 @@ import "dayjs/locale/en";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 dayjs.extend(localizedFormat);
 
-
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
@@ -48,13 +47,12 @@ export default async function RootLayout(props: {
           : dmSans.className
       }
     >
-      <body className="relative text-white">
-        <div className="absolute inset-0 z-0">
-          {/* <BackgroundGradientAnimation /> */}
-          <WavyBackground />
+      <body className="relative text-white min-h-screen flex flex-col">
+        <div className="fixed inset-0 -z-10">
+          <BackgroundGradientAnimation />
         </div>
 
-        <div className="relative z-10">
+        <div className="relative z-10 flex-grow">
           <NextIntlClientProvider messages={messages}>
             <Navbar />
             {props.children}

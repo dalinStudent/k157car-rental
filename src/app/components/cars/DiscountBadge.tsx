@@ -7,13 +7,13 @@ type Props = {
 };
 
 export const DiscountBadge = ({ amount, type }: Props) => {
+	const text =
+    type === DiscountType.Percentage
+      ? `${amount}% Off`
+      : `${formatCurrency(amount)} Off`;
     return (
-		<div className="primary-gradient absolute top-0 left-2 py-1 px-2 rounded-b-lg">
-			<p className="text-white text-sm">
-				{type === DiscountType.Percentage
-					? `${amount}% Off`
-					: `${formatCurrency(amount)} Off`}
-			</p>
-		</div>
+		<span className="text-xs text-[#0D1117] bg-yellow-100 rounded-full px-3 py-1">
+			{text}
+		</span>
 	);
 }

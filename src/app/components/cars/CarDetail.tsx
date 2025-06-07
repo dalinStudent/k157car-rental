@@ -9,6 +9,7 @@ import { CustomModal } from '../CustomModal';
 import { CarGalleries } from './CarGalleries';
 import { QuantityCounter } from '../QuantityCounter';
 import { DiscountType } from '@/common/enums/discount-type.enum';
+// import { DiscountType } from '@/common/enums/discount-type.enum';
 
 type Props = {
 	item: Car;
