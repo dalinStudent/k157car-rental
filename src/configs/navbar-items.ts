@@ -23,7 +23,7 @@ export const NavbarItems: Record<"en" | "km" | "zh", NavbarItem[]> = {
     },
     {
       name: "Service",
-      href: "/faqs",
+      href: "/service",
     },
     {
       name: "FAQs",
@@ -55,7 +55,7 @@ export const NavbarItems: Record<"en" | "km" | "zh", NavbarItem[]> = {
     },
     {
       name: "工作原理",
-      href: "/faqs",
+      href: "/service",
     },
     {
       name: "我们的服务",
