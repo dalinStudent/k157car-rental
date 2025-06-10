@@ -20,5 +20,11 @@
     "reliable": "ទំនុកចិត្តខ្ពស់",
     "affordable": "តម្លៃសមរម្យ",
     "convenient": "លក្ខណងាយៗ"
+  },
+  "footer": {
+    "powered_by" : {
+      "title": "Powered by",
+      "company": "Hoem Dalin - hoemdalin@gmail.com"
+    }
   }
 }

@@ -15,7 +15,8 @@ import { dmSans, kantumruy, notoSans } from "../fonts";
 import { Navbar } from "../components/Navbar";
 import { routing } from "@/libs/i18nNavigation";
 import { BackgroundGradientAnimation } from "../components/BackgroundGradientAnimation";
-import { WavyBackground } from "../components/WavyBackground";
+// import { WavyBackground } from "../components/WavyBackground";
+import { Footer } from "@/app/components/Footer";
 
 export const metadata: Metadata = {
   title: "eCommerce Website",
@@ -56,6 +57,7 @@ export default async function RootLayout(props: {
           <NextIntlClientProvider messages={messages}>
             <Navbar />
             {props.children}
+            <Footer />
           </NextIntlClientProvider>
         </div>
       </body>
