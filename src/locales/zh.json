@@ -20,5 +20,11 @@
     "reliable": "可靠的",
     "affordable": "价格合理",
     "convenient": "抱歉"
+  },
+  "footer": {
+    "powered_by" : {
+      "title": "Powered by",
+      "company": "Hoem Dalin - hoemdalin@gmail.com"
+    }
   }
 } 

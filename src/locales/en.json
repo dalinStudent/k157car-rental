@@ -20,5 +20,11 @@
     "reliable": "Reliable",
     "affordable": "Affordable",
     "convenient": "Convenient"
+  },
+  "footer": {
+    "powered_by" : {
+      "title": "Powered by",
+      "company": "Hoem Dalin - hoemdalin@gmail.com"
+    }
   }
 }

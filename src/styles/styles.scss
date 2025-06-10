@@ -125,3 +125,42 @@
     letter-spacing: 2px;
   }
 }
+
+.powered-by-badge {
+  position: relative;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #e0ceba;
+  height: 42px;
+
+  .floating-badge {
+    position: absolute;
+    top: -14px;
+    left: -2px;
+    padding: 4px;
+    background: linear-gradient(225deg, #9e7b52 0%, #6a4a2f 100%);
+  }
+
+  p {
+    font-size: 12px;
+    font-weight: 400;
+    background: linear-gradient(225deg, #e0ceba 0%, #c09c75 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    background: linear-gradient(225deg, #e0ceba 0%, #c09c75 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.gradient-dark {
+  background: linear-gradient(225deg, #9e7b52 0%, #6a4a2f 100%);
+}
