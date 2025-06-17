@@ -43,7 +43,7 @@ export const Condition = ({ value, onChange }: ConditionProps) => {
     >
               <div className="flex items-center cursor-pointer gap-1">
         <CaretUpOutlined className="icons" />
-        <span className="text-sm text-gray-600 whitespace-nowrap flex-shrink-0">
+        <span className="hidden sm:inline text-sm text-gray-600 whitespace-nowrap flex-shrink-0">
           {value ? `${value.replace("-", " ")}` : t("condition")}
         </span>
       </div>

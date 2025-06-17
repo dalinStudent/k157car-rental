@@ -26,5 +26,17 @@
       "title": "Powered by",
       "company": "Hoem Dalin - hoemdalin@gmail.com"
     }
+  },
+  "service": {
+    "title": {
+      "first": "多种车型",
+      "second": "灵活的租赁计划功能",
+      "third": "我们的服务如何运作"
+    },
+    "sub_title": {
+      "first": "从紧凑型轿车到豪华 SUV，为您的旅程选择完美的座驾。",
+      "second": "按小时、天、周或月租​​赁 — — 无论您的时间安排如何。",
+      "third": "无论在租赁前、租赁中还是租赁后，只要您需要帮助，我们都会随时为您提供帮助。"
+    }
   }
 } 

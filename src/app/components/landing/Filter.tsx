@@ -22,34 +22,37 @@ export const Filter = () => {
   };
 
   return (
-      <><div className="filter">
-      <div className="m-auto w-[800px] flex justify-between bg-white rounded-full p-4">
-        <div className="flex items-center gap-1 min-w-[120px]">
-          <Location value={location} onChange={handleSelectChange} />
-        </div>
+    <>
+      <div className="filter">
+        <div className="m-auto w-[350px] p-2 sm:w-[800px] flex justify-between bg-white rounded-full sm:p-4">
+          <div className="flex items-center justify-center gap-1 w-[20px] sm:min-w-[120px]">
+            <Location value={location} onChange={handleSelectChange} />
+          </div>
 
-        <div className="flex items-center gap-1 min-w-[120px]">
-          <SortPrice value={priceLabel} onChange={setPriceLabel} />
-        </div>
+          <div className="flex items-center justify-center gap-1 w-[20px] sm:min-w-[120px]">
+            <SortPrice value={priceLabel} onChange={setPriceLabel} />
+          </div>
 
-        <div className="flex items-center gap-1 min-w-[120px]">
-          <Condition value={condition} onChange={setCondition} />
-        </div>
+          <div className="flex items-center justify-center gap-1 w-[20px] sm:min-w-[120px]">
+            <Condition value={condition} onChange={setCondition} />
+          </div>
 
-        <div className="flex items-center gap-2">
-          <DateRangePicker value={range} onChange={setRange} />
-        </div>
+          <div className="flex items-center gap-2">
+            <DateRangePicker value={range} onChange={setRange} />
+          </div>
 
-        <div className="flex items-center gap-2">
-          <button className="buttons text-sm">
-            {t('button.explore')}
-            <span><ArrowRightOutlined /></span>
-          </button>
+          <div className="flex items-center gap-2">
+            <button className="buttons text-sm">
+              <span className="hidden sm:block">{t("button.explore")}</span>
+              <span>
+                <ArrowRightOutlined />
+              </span>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    
-    <CarHoverRotate />
+
+      <CarHoverRotate />
     </>
   );
 };

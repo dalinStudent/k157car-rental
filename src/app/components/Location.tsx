@@ -45,7 +45,7 @@ export const Location = ({ value, onChange }: LocationProps) => {
     >
       <div className="flex items-center cursor-pointer gap-1">
         <AimOutlined className="icons" />
-        <span className="text-sm text-gray-600 whitespace-nowrap flex-shrink-0">
+        <span className="hidden sm:inline text-sm text-gray-600 whitespace-nowrap flex-shrink-0">
           {value ? `${value.replace("-", " ")}` : t("location")}
         </span>
       </div>

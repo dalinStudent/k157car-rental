@@ -6,17 +6,17 @@ export const Brands = () => {
   const locale = useLocale() as "en" | "km" | "zh";
   const items = BrandItems[locale];
   return (
-    <div className="flex flex-row gap-3 justify-center mt-[100px]">
+    <div className="flex flex-row gap-1 sm:gap-3 justify-center mt-0 sm:mt-[100px]">
       {items.map((item, index) => (
-        <div key={item.brand} className="flex flex-col items-center gap-8">
+        <div key={item.brand} className="w-36 sm:w-40 flex flex-col items-center gap-4">
           <Image
             src={item.imgSrc}
             alt={item.brand}
             width={200}
             height={200}
-            className="h-12 w-auto object-contain"
+            className="h-full w-auto object-contain"
           />
-          <span className="text-sm text-center">{item.brand}</span>
+          <span className="text-sm text-center hidden sm:block">{item.brand}</span>
         </div>
       ))}
     </div>

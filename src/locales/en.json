@@ -4,7 +4,7 @@
     "description": "This is the home page of our application."
   },
   "landing": {
-   "main_title": "The best <highlight>Car Rental</highlight> Company Service",
+    "main_title": "The best <highlight>Car Rental</highlight> Company Service",
     "description": "Find the perfect ride for every journey — easy booking, great rates, and reliable service.",
     "button": {
       "explore": "Explore",
@@ -22,9 +22,21 @@
     "convenient": "Convenient"
   },
   "footer": {
-    "powered_by" : {
+    "powered_by": {
       "title": "Powered by",
       "company": "Hoem Dalin - hoemdalin@gmail.com"
+    }
+  },
+  "service": {
+    "title": {
+      "first": "Wide Range of Vehicles",
+      "second": "Flexible Rental Plans Feature",
+      "third": "How Our Service Works"
+    },
+    "sub_title": {
+      "first": "From compact cars to luxury SUVs, choose the perfect ride for your journey.",
+      "second": "Rent by the hour, day, week, or month — whatever suits your schedule.",
+      "third": "We’re here anytime you need help — before, during, or after your rental."
     }
   }
 }

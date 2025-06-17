@@ -15,12 +15,13 @@ import { dmSans, kantumruy, notoSans } from "../fonts";
 import { Navbar } from "../components/Navbar";
 import { routing } from "@/libs/i18nNavigation";
 import { BackgroundGradientAnimation } from "../components/BackgroundGradientAnimation";
-// import { WavyBackground } from "../components/WavyBackground";
+import { WavyBackground } from "../components/WavyBackground";
 import { Footer } from "@/app/components/Footer";
 
 export const metadata: Metadata = {
   title: "eCommerce Website",
   description: "Look Then Buy",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default async function RootLayout(props: {
@@ -49,8 +50,9 @@ export default async function RootLayout(props: {
       }
     >
       <body className="relative text-white min-h-screen flex flex-col">
-        <div className="fixed inset-0 -z-10">
+        <div className="fixed inset-0 -z-10 w-full h-full overflow-hidden">
           <BackgroundGradientAnimation />
+          {/* <WavyBackground /> */}
         </div>
 
         <div className="relative z-10 flex-grow">

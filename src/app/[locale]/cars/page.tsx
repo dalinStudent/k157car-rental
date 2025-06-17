@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { CarList } from "@/app/components/cars/CarList";
 import { ListType } from "@/common/enums/list-type.enum";
