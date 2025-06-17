@@ -78,7 +78,7 @@ export const SortPrice = ({ value, onChange }: PriceProps) => {
             transform: "rotate(90deg)",
           }}
         />
-        <span className="text-sm text-gray-600 whitespace-nowrap flex-shrink-0">
+        <span className="hidden sm:inline text-sm text-gray-600 whitespace-nowrap flex-shrink-0">
           {value ? `${value.replace("-", " to ")} $` : t("sort_price")}
         </span>
       </div>

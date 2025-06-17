@@ -26,6 +26,7 @@ export const CarListItem = (props: Props) => {
           src={props.item.imageUrl}
           alt={props.item.name}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-contain transition-transform duration-300 group-hover:scale-105"
         />
         {props.item.discountAmount != null && props.item.discountType && (
