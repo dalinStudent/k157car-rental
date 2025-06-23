@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 
 export const CarHoverRotate = () => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
@@ -23,39 +24,24 @@ export const CarHoverRotate = () => {
 
   return (
     <div
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="w-[90%] sm:w-[500px] md:w-[600px] h-[200px] sm:h-[300px] mx-auto"
+    onMouseMove={handleMouseMove}
+    onMouseLeave={handleMouseLeave}
+    className="relative w-[90%] sm:w-[500px] md:w-[600px] h-[200px] sm:h-[300px] mx-auto"
+    style={{ perspective: 800 }}
+  >
+    <Image
+      src="/images/mg-brand.png"
+      alt="Car"
+      fill
+      priority
+      className="object-contain pointer-events-none select-none"
       style={{
-        perspective: 800,
+        transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
+        transition: "transform 0.1s ease-out",
+        transformStyle: "preserve-3d",
       }}
-      // style={{
-      //   perspective: 800,
-      //   width: 600,
-      //   height: 300,
-      //   margin: "auto",
-      // }}
-    >
-      <img
-        src="/images/mg-brand.png"
-        alt="Car"
-        className="w-full h-full object-contain pointer-events-none select-none"
-        style={{
-          transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-          transition: "transform 0.1s ease-out",
-          transformStyle: "preserve-3d",
-        }}
-        // style={{
-        //   width: "100%",
-        //   height: "100%",
-        //   objectFit: "contain",
-        //   transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-        //   transition: "transform 0.1s ease-out",
-        //   transformStyle: "preserve-3d",
-        //   userSelect: "none",
-        //   pointerEvents: "none",
-        // }}
-      />
-    </div>
+    />
+  </div>
+  
   );
 };

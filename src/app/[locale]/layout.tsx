@@ -15,13 +15,11 @@ import { dmSans, kantumruy, notoSans } from "../fonts";
 import { Navbar } from "../components/Navbar";
 import { routing } from "@/libs/i18nNavigation";
 import { BackgroundGradientAnimation } from "../components/BackgroundGradientAnimation";
-import { WavyBackground } from "../components/WavyBackground";
 import { Footer } from "@/app/components/Footer";
 
 export const metadata: Metadata = {
   title: "eCommerce Website",
   description: "Look Then Buy",
-  viewport: "width=device-width, initial-scale=1",
 };
 
 export default async function RootLayout(props: {

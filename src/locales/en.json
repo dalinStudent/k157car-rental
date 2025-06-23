@@ -1,7 +1,8 @@
 {
   "HomePage": {
-    "title": "Welcome to the Home Page",
-    "description": "This is the home page of our application."
+    "title": "Best Car Rental in Phnom Penh - K157 Car Rental Service",
+    "description": "Rent a car in Phnom Penh with K157. Affordable daily, weekly, and monthly rentals. Choose from sedans, SUVs, and more. Self-drive or with driver. Book now!",
+    "k157car_rental_service": "K157 Car Rental Service"
   },
   "landing": {
     "main_title": "The best <highlight>Car Rental</highlight> Company Service",
@@ -37,6 +38,10 @@
       "first": "From compact cars to luxury SUVs, choose the perfect ride for your journey.",
       "second": "Rent by the hour, day, week, or month — whatever suits your schedule.",
       "third": "We’re here anytime you need help — before, during, or after your rental."
+    },
+    "meta": {
+      "title": "Car Rental Services in Phnom Penh | K157 Car Rental Service",
+      "description": "From compact cars to luxury SUVs, rent with flexible daily, weekly, or monthly plans. Choose the best ride with K157 Car Rental in Cambodia."
     }
   }
 }
