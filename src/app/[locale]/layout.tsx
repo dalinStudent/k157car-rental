@@ -16,56 +16,66 @@ import { Navbar } from "../components/Navbar";
 import { routing } from "@/libs/i18nNavigation";
 import { BackgroundGradientAnimation } from "../components/BackgroundGradientAnimation";
 import { Footer } from "@/app/components/Footer";
-import { WebsiteUrl } from "@/configs";
 
-const siteUrl = "https://nextjs-tailwind-i18n.vercel.app";
+const WebsiteUrl = "https://nextjs-tailwind-i18n.vercel.app";
 
-const messages = await getMessages();
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const messages = await getMessages();
+  const { locale } = await params;
+  const ogLocaleMap: Record<string, string> = {
+    en: "en_US",
+    km: "km_KH",
+    zh: "zh_CN",
+  };
 
-export const metadata: Metadata = {
-  title: messages["title"] || "K157 Car Rental Service",
-  description: messages["description"] || "K157 Car Rental Service",
-  keywords: [
-    "car rental",
-    "rent a car",
-    "car hire",
-    "Phnom Penh car rental",
-    "self-drive car Cambodia",
-    "car rental with driver",
-    "cheap car hire Phnom Penh",
-  ].join(", "),
-  openGraph: {
+  return {
     title: messages["title"] || "K157 Car Rental Service",
     description: messages["description"] || "K157 Car Rental Service",
-    images: [`${siteUrl}/images/mg-brand.png`],
-    url: WebsiteUrl,
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: messages["title"] || "K157 Car Rental Service",
-    description: messages["description"] || "K157 Car Rental Service",
-    images: [`${siteUrl}/images/mg-brand.png`],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: WebsiteUrl,
-    languages: {
-      en: `${WebsiteUrl}/en`,
-      km: `${WebsiteUrl}/km`,
-      zh: `${WebsiteUrl}/zh`,
+    openGraph: {
+      title: messages["title"] || "K157 Car Rental Service",
+      description: messages["description"] || "K157 Car Rental Service",
+      url: `${WebsiteUrl}/${locale}`,
+      siteName: "K157 Car Rental Service",
+      images: [
+        {
+          url: `${WebsiteUrl}/images/mg-brand.png`,
+          width: 1200,
+          height: 630,
+          alt: "K157 Car Rental Service",
+        },
+      ],
+      type: "website",
     },
-  },
-};
+    twitter: {
+      card: "summary_large_image",
+      title: messages["title"] || "K157 Car Rental Service",
+      description: messages["description"] || "K157 Car Rental Service",
+      images: [`${WebsiteUrl}/images/mg-brand.png`],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    alternates: {
+      canonical: WebsiteUrl,
+      languages: {
+        en: `${WebsiteUrl}/en`,
+        km: `${WebsiteUrl}/km`,
+        zh: `${WebsiteUrl}/zh`,
+      },
+    },
+  };
+}
 
 export default async function RootLayout(props: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = props.params;
+  const { locale } = await props.params;
 
   if (!routing.locales.includes(locale)) {
     redirect("/en");
@@ -102,3 +112,4 @@ export default async function RootLayout(props: {
     </html>
   );
 }
+
