@@ -3,14 +3,14 @@ import { cn } from "@/libs/gradient";
 import { useEffect, useRef, useState } from "react";
 
 export const BackgroundGradientAnimation = ({
-  gradientBackgroundStart = "rgb(173, 216, 230)", // Powder blue
-  gradientBackgroundEnd = "rgb(25, 32, 48)",  // Dark navy
-  firstColor = "70, 130, 180",  // Steel blue
-  secondColor = "138, 180, 213",  // Pastel blue
-  thirdColor = "176, 224, 230", // Powder blue
-  fourthColor = "194, 178, 128",  // Muted gold
-  fifthColor = "155, 165, 180", // Dusty gray-blue
-  pointerColor = "110, 144, 191",  // Desaturated blue-purple
+  gradientBackgroundStart = "rgb(173, 216, 230)",
+  gradientBackgroundEnd = "rgb(25, 32, 48)",
+  firstColor = "70, 130, 180",
+  secondColor = "138, 180, 213",
+  thirdColor = "176, 224, 230",
+  fourthColor = "194, 178, 128",
+  fifthColor = "155, 165, 180",
+  pointerColor = "110, 144, 191",
   size = "80%",
   blendingValue = "hard-light",
   children,
@@ -85,7 +85,7 @@ export const BackgroundGradientAnimation = ({
 
   useEffect(() => {
     setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
-  }, []);
+  }, []);  
 
   useEffect(() => {
     const handleResize = () => {

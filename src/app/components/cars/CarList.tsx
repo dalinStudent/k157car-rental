@@ -1,8 +1,5 @@
 import { ListType } from "@/common/enums/list-type.enum";
-import { CategoryItems } from "@/configs/category-item";
 import { Car, CarCategory } from "@/types/car.type";
-import { PaginatedResponse } from "@/types/response.type";
-import { useLocale } from "next-intl";
 import { useState } from "react";
 import { CategoryList } from "../CategoryList";
 import { CarListItem } from "./CarListItem";
@@ -11,8 +8,7 @@ import { CarDetails } from "./CarDetail";
 import { Categories } from "@/data/Categories";
 import { Cars } from "@/data/Cars";
 import { fadeInUp } from "@/configs/animate-css-classes";
-import Lottie from "lottie-react";
-import lottieData from "@/public/data.json"
+import LottieAnimation from "../LottieAnimation";
 
 type Props = {
   listType: ListType;
@@ -52,9 +48,9 @@ export const CarList = (props: Props) => {
     ? cars.content.filter((car) => car.category.id === selectedCategory.id)
     : cars.content;
 
-    const popularCars = filteredCars
-  .filter(car => car.rentCount && car.rentCount > 3)
-  .sort((a, b) => b.rentCount - a.rentCount);
+  const popularCars = filteredCars
+    .filter((car) => car.rentCount && car.rentCount > 3)
+    .sort((a, b) => b.rentCount - a.rentCount);
 
   return (
     <div className="flex flex-col gap-4 px-4 py-4">
@@ -70,13 +66,12 @@ export const CarList = (props: Props) => {
         (props.listType === ListType.List ? (
           popularCars.length === 0 ? (
             <div className="flex flex-col items-center justify-center text-center text-gray-500">
-            <div className="w-96">
-              <Lottie animationData={lottieData} loop autoplay />
+              <LottieAnimation />
+              <h3 className="text-xl font-semibold">No cars found</h3>
+              <p className="text-sm mt-2">
+                Try selecting a different category.
+              </p>
             </div>
-            <h3 className="text-xl font-semibold">No cars found</h3>
-            <p className="text-sm mt-2">Try selecting a different category.</p>
-          </div>
-
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
               {popularCars.map((item, index) => {
