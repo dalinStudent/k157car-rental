@@ -61,7 +61,7 @@ export const BackgroundGradientAnimation = ({
   }, []);
 
   useEffect(() => {
-    const move = () => { 
+    const move = () => {
       if (!interactiveRef.current) {
         return;
       }
@@ -70,7 +70,7 @@ export const BackgroundGradientAnimation = ({
       interactiveRef.current.style.transform = `translate(${Math.round(
         curX
       )}px, ${Math.round(curY)}px)`;
-    }
+    };
 
     move();
   }, [tgX, tgY]);
@@ -85,16 +85,16 @@ export const BackgroundGradientAnimation = ({
 
   useEffect(() => {
     setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
-  }, []);  
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth < 768);
-    }
+    };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [])
+  }, []);
 
   return (
     <div

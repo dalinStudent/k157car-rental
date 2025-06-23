@@ -1,3 +1,5 @@
+"use client";
+
 import { ListType } from "@/common/enums/list-type.enum";
 import { Car, CarCategory } from "@/types/car.type";
 import { useState } from "react";

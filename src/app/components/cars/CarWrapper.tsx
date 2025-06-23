@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ListType } from "@/common/enums/list-type.enum";
-import { Cars } from "@/app/[locale]/cars/page";
+import Cars from "./Cars";
 
 export default function CarsWrapper() {
   const [listType, setListType] = useState<ListType>(ListType.List);
