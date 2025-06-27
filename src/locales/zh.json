@@ -43,5 +43,18 @@
       "title": "金边租车服务 | K157租车服务",
       "description": "从紧凑型轿车到豪华SUV，我们提供灵活的日租、周租或月租方案。选择柬埔寨K157租车公司，开启您的最佳旅程。"
     }
+  },
+  "booking": {
+    "include_price": "包含在价格中",
+    "pickup": "原始位置",
+    "dropoff": "放置位置",
+    "summary_price": "价格摘要",
+    "daily_rate": "每日价格",
+    "weekly_rate": "每日价格",
+    "monthly_rate": "每月价格",
+    "availability": "可用性",
+    "button": {
+      "book": "立即预订"
+    }
   }
 } 

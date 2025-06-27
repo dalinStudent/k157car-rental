@@ -3,6 +3,8 @@ import { Car } from "@/types/car.type";
 import { DiscountBadge } from "@/app/components/cars/DiscountBadge";
 import { DisplayAmount } from "@/app/components/cars/DisplayAmount";
 import { CarStatus } from "@/common/enums/car-status.enum";
+import { useRouter } from "@/libs/i18nNavigation";
+import { useLocale } from "next-intl";
 
 type Props = {
   item: Car;
@@ -10,6 +12,13 @@ type Props = {
 };
 
 export const CarListItem = (props: Props) => {
+  const router = useRouter();
+  const locale = useLocale() as "en" | "km" | "zh";
+
+  const goToDetailPage = () => {
+    router.push(`/cars/${props.item.id}`);
+  };
+
   const isAvailable = props.item.status === CarStatus.Available;
   return (
     <div className="w-full rounded-2xl border border-[#F5F5F5] overflow-hidden">
@@ -21,7 +30,6 @@ export const CarListItem = (props: Props) => {
         >
           {isAvailable ? CarStatus.Available : CarStatus.Unavailable}
         </div>
-
         <Image
           src={props.item.imageUrl}
           alt={props.item.name}
@@ -38,10 +46,13 @@ export const CarListItem = (props: Props) => {
           </div>
         )}
 
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="bg-white bg-opacity-90 rounded-lg px-4 py-2 shadow-md text-sm font-semibold text-gray-900 cursor-pointer">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:pointer-events-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <button
+            className="buttons bg-white bg-opacity-90 rounded-lg px-4 py-2 shadow-md text-sm font-semibold text-gray-900 cursor-pointer"
+            onClick={goToDetailPage}
+          >
             View Details
-          </div>
+          </button>
         </div>
       </div>
 
@@ -61,4 +72,4 @@ export const CarListItem = (props: Props) => {
       </div>
     </div>
   );
-}
+};

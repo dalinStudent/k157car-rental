@@ -6,7 +6,7 @@ import { PoweredBy } from "./PoweredBy";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-100 w-full rounded-t-xl py-8 px-4 mt-[150px]">
+    <footer className="w-full bg-gray-100 rounded-t-xl mt-[150px] px-4 py-8">
       <div className="flex flex-col items-center gap-4 mb-6">
         <Image
           src="/images/logo.jpg"
@@ -15,11 +15,11 @@ export const Footer = () => {
           height={100}
           className="rounded-full"
         />
-        <div className="flex gap-6 mt-5">
+        <div className="mt-4 flex flex-wrap justify-center gap-4 sm:gap-6">
           {SocialItems.map((item, index) => (
             <a
               key={item.name}
-              className={`${fadeIn} flex size-9 items-center justify-center rounded-full bg-[#000000]/60 transition-colors hover:bg-[#CD202A]`}
+              className={`${fadeIn} flex size-9 items-center justify-center rounded-full bg-black/60 transition-colors btn-hover-gradient`}
               data-wow-delay={`${index * 0.1}s`}
               href={item.link}
               target="_blank"
@@ -31,10 +31,10 @@ export const Footer = () => {
         </div>
       </div>
 
-      <hr className="border-gray-300 mb-6" />
+      <hr className="border-gray-300 mb-6 w-full" />
 
-      <div className="flex justify-between items-center max-w-7xl mx-auto">
-        <nav className="flex gap-6 text-gray-700 text-sm md:text-base">
+      <div className="mx-auto w-full max-w-7xl px-4">
+        <nav className="mb-6 flex flex-wrap justify-center gap-4 text-sm text-gray-700 sm:justify-start sm:gap-6 md:text-base">
           <a href="/" className="hover:underline">
             Home
           </a>
@@ -49,16 +49,13 @@ export const Footer = () => {
           </a>
         </nav>
 
-        {/* <div className="flex items-center gap-4 text-gray-500 text-sm">
-          <span>© 2025 hoemdalin@gmail.com</span>
-        </div> */}
-        <div className="w-full border-t border-white/10">
-          <div className="m-auto flex max-w-[1194px] flex-col items-center justify-between gap-6 px-4 py-6 sm:flex-row sm:gap-8">
-            <p className="text-center text-base font-normal text-gray-500 sm:text-left">
+        <div className="border-t border-white/10 pt-6">
+          <div className="flex flex-col items-center justify-between gap-6 sm:flex-row sm:gap-8">
+            <p className="text-center text-sm text-gray-500 sm:text-left sm:text-base">
               © 2025 hoemdalin@gmail.com
             </p>
 
-            <div className="flex flex-col items-center justify-end gap-6 sm:flex-row sm:gap-4">
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-4">
               <PoweredBy />
               <BtnScrollToTop />
             </div>

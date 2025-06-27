@@ -1,65 +1,3 @@
-// "use client";
-
-// import { useLocale } from "next-intl";
-// import { NavbarItems } from "../../configs/navbar-items";
-// import { NavbarActionBtn } from "./NavbarActionBtn";
-// import { useEffect, useState } from "react";
-// import { SearchInput } from "./SearchInput";
-// import { fadeIn, speedFast, speedSlow } from "@/configs/animate-css-classes";
-// import { Localization } from "./Localization";
-// import { usePathname, useRouter } from "@/libs/i18nNavigation";
-// import clsx from "clsx";
-
-// export const Navbar = () => {
-//   const locale = useLocale() as "en" | "km" | "zh";
-//   const items = NavbarItems[locale];
-//   const router = useRouter();
-//   const pathname = usePathname();
-//   const [showSearch, setShowSearch] = useState<boolean>(false);
-//   const [searchQuery, setSearchQuery] = useState<string>("");
-//   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
-
-//   useEffect(() => {
-//     setIsMenuOpened(false);
-//   }, [pathname])
-
-//   return (
-//     <div className="navbar relative z-50">
-//       <div className={clsx(
-//           "mx-auto flex items-center justify-between bg-white/10 backdrop-blur-xl rounded-full p-2 transition-all duration-500 ease-in-out",
-//           showSearch ? "lg:w-[800px]" : "lg:w-[600px]"
-//         )}>
-
-//         <div className="flex items-center gap-6 overflow-hidden">
-//           <div className="flex gap-4 whitespace-nowrap p-2">
-//             {items.map((items) => (
-//               <p className="text-sm lg:text-[18px] text-white" key={items.name}>
-//                 {items.name}
-//               </p>
-//             ))}
-//           </div>
-//         </div>
-//         <div className="flex items-center gap-4">
-//           {showSearch && (
-//             <div className={`${fadeIn} w-56 transition-opacity duration-500 ease-in-out`} data-wow-delay={speedSlow}>
-//               <SearchInput
-//                 value={searchQuery}
-//                 onChange={(val) => setSearchQuery(val)}
-//               />
-//             </div>
-//           )}
-//           <NavbarActionBtn
-//             showSearch={showSearch}
-//             setShowSearch={setShowSearch}
-//             setSearchQuery={setSearchQuery}
-//           />
-//           <Localization />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
 "use client";
 
 import { useLocale } from "next-intl";
@@ -67,7 +5,7 @@ import { NavbarItems } from "../../configs/navbar-items";
 import { NavbarActionBtn } from "./NavbarActionBtn";
 import { useEffect, useState } from "react";
 import { SearchInput } from "./SearchInput";
-import { fadeIn, speedSlow } from "@/configs/animate-css-classes";
+import { fadeIn, fadeInUp, speedSlow } from "@/configs/animate-css-classes";
 import { Localization } from "./Localization";
 import { usePathname, useRouter } from "@/libs/i18nNavigation";
 import clsx from "clsx";
@@ -95,13 +33,13 @@ export const Navbar = () => {
           "w-full max-w-[95%]"
         )}
       >
-        <div className="hidden lg:flex items-center gap-6 overflow-hidden">
+        <div className="hidden sm:flex items-center gap-6 overflow-hidden">
           <div className="flex gap-4 whitespace-nowrap p-2">
             {items.map((item) => (
               <p
                 key={item.name}
                 className="text-sm lg:text-[18px] text-white cursor-pointer hover:underline"
-                // onClick={() => router.push(item.href)}
+                onClick={() => router.push(item.href)}
               >
                 {item.name}
               </p>
@@ -109,8 +47,7 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Hamburger */}
-        <div className="lg:hidden">
+        <div className="sm:hidden">
           <button onClick={() => setIsMenuOpened(!isMenuOpened)}>
             <Hambuger
               toggled={isMenuOpened}
@@ -141,16 +78,17 @@ export const Navbar = () => {
       </div>
 
       {isMenuOpened && (
-        <div className="lg:hidden absolute right-4 top-full mt-2 w-[90%] max-w-xs bg-white text-black rounded-xl shadow-lg z-50">
+        <div className="sm:hidden absolute top-full mt-2 w-[90%] max-w-xs bg-white text-black rounded-xl shadow-lg z-50 bg-neutral-gray cursor-pointer">
           <div className="flex flex-col p-4 gap-2">
-            {items.map((item) => (
+            {items.map((item, index) => (
               <button
                 key={item.name}
                 onClick={() => {
-                  // router.push(item.path);
+                  router.push(item.href);
                   setIsMenuOpened(false);
                 }}
-                className="text-left px-4 py-2 rounded hover:bg-gray-100"
+                className={`${fadeInUp} text-left px-4 py-2 rounded hover:bg-gray-100/80 cursor-pointer`}
+                data-wow-delay={`${index * 0.1}s`}
               >
                 {item.name}
               </button>

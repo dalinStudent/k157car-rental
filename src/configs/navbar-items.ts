@@ -6,7 +6,7 @@ export interface SubMenuItem {
 
 export interface NavbarItem {
   name: string;
-  href?: string;
+  href: string;
   externalHref?: string;
   subItems?: SubMenuItem[];
 }

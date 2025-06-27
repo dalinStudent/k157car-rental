@@ -7,3 +7,10 @@ $primary-color: #34495e;
 
 $gold-gradient: linear-gradient(225deg, #e0ceba 0%, #c09c75 100%);
 $canadia-gradient: linear-gradient(225deg, #ed213a 0%, #93291e 100%);
+
+$orange-500: #f97316;
+
+$gradient-orange-red: linear-gradient(to right, $orange-500, #ef4444);
+$gradient-orange-amber: linear-gradient(to right, $orange-500, #fbbf24);
+$gradient-orange-pink: linear-gradient(to right, $orange-500, #ec4899);
+$gradient-orange-yellow: linear-gradient(to right, $orange-500, #facc15);

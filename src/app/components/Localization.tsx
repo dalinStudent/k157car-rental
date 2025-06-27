@@ -1,6 +1,6 @@
 import { useLocale } from "next-intl";
 import Image from "next/image";
-import { PopoverCustom } from "./Popover";
+import { PopoverCustom } from "@/app/components/Popover";
 import { LanguageItems } from "@/configs/lang-item";
 import { usePathname, useRouter } from "@/libs/i18nNavigation";
 
@@ -11,7 +11,7 @@ export const Localization = () => {
 
   const content = (
     <div className="">
-      {LanguageItems.map((lang, index) => (
+      {LanguageItems.map(lang => (
         <button
           key={lang.code}
           type="button"
@@ -19,10 +19,10 @@ export const Localization = () => {
                 ${locale === lang.code ? "button-item" : ""}
                 ${
                   locale !== lang.code
-                    ? "hover:navbar-gradient-text hover:bg-[rgba(52,73,94,0.4)]"
+                    ? "hover:bg-gray-100/80"
                     : ""
                 } 
-                flex w-full items-center space-x-3 rounded-xl p-4 text-black
+                flex w-full items-center space-x-3 rounded-xl p-4 text-black cursor-pointer
               `}
           onClick={() => onChangeLang(lang.code)}
         >
