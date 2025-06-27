@@ -52,7 +52,6 @@ const BookingPage = ({ params }: { params: Promise<{ id: string }> }) => {
         booking.endDate
       } for $${totalPrice.toFixed(2)}`
     );
-    // Here add to cart or API call logic
   };
 
   const availabilityStart = car.availabilityStart || "24 June, 2025 10:00AM";
