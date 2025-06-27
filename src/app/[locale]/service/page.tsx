@@ -96,7 +96,7 @@ const Service = async () => {
 
                 <div className="w-full sm:w-1/2 h-64 md:h-auto">
                   <Image
-                    src={item.imageUrl}
+                    src={item.imageUrl ?? ''}
                     alt="image-service"
                     width={600}
                     height={400}

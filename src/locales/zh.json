@@ -54,7 +54,8 @@
     "monthly_rate": "每月价格",
     "availability": "可用性",
     "button": {
-      "book": "立即预订"
+      "book": "立即预订",
+      "submit": "提交"
     }
   }
 } 

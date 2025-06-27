@@ -7,8 +7,8 @@ import { use, useState } from "react";
 import Image from "next/image";
 import { CarSpecItems, includedSpecItems } from "@/configs/social-items";
 import { useLocale, useTranslations } from "next-intl";
-import { Upload } from "antd";
 import UserForm from "@/app/components/Form";
+import { fadeIn } from "@/configs/animate-css-classes";
 
 const BookingPage = ({ params }: { params: Promise<{ id: string }> }) => {
   const t = useTranslations("booking");
@@ -79,7 +79,7 @@ const BookingPage = ({ params }: { params: Promise<{ id: string }> }) => {
         <div className="flex flex-col mt-10">
           <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
             {items.map((item, index) => (
-              <div key={index} className="flex items-center gap-2">
+              <div key={index} className={`${fadeIn} flex items-center gap-2`}>
                 <Image src={item.icon} alt={item.name} width={24} height={24} />
                 <span>{item.name}</span>
               </div>
@@ -159,7 +159,7 @@ const BookingPage = ({ params }: { params: Promise<{ id: string }> }) => {
               Total: ${totalPrice.toFixed(2)}
             </p>
           )}
-            <p className="inline-block p-3 font-semibold bg-green-100 text-green-800 rounded-full">
+            <p className="inline-block p-2 font-semibold bg-green-100 text-green-800 rounded-full">
               4.8/5
             </p>
           <div className="flex items-center gap-2">

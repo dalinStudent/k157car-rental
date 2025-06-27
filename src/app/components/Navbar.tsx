@@ -33,23 +33,6 @@ export const Navbar = () => {
           "w-full max-w-[95%]"
         )}
       >
-<<<<<<< HEAD
-        <div className="hidden sm:flex items-center gap-6 overflow-hidden">
-=======
-        {/* <div className="hidden lg:flex items-center gap-6 overflow-hidden">
->>>>>>> cd1fef1 (feat(aboutus): add responsive about us page)
-          <div className="flex gap-4 whitespace-nowrap p-2">
-            {items.map((item) => (
-              <p
-                key={item.name}
-                className="text-sm lg:text-[18px] text-white cursor-pointer hover:underline"
-                onClick={() => router.push(item.href)}
-              >
-                {item.name}
-              </p>
-            ))}
-          </div>
-        </div> */}
         <div className="hidden sm:flex items-center gap-6 overflow-hidden">
           <div className="flex gap-2 whitespace-nowrap">
             {items.map((item) => {
@@ -108,7 +91,7 @@ export const Navbar = () => {
               <button
                 key={item.name}
                 onClick={() => {
-                  router.push(item.href);
+                  router.push(item.path);
                   setIsMenuOpened(false);
                 }}
                 className={`${fadeInUp} text-left px-4 py-2 rounded hover:bg-gray-100/80 cursor-pointer`}

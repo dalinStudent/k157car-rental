@@ -43,7 +43,7 @@ export const NavbarItems: Record<"en" | "km" | "zh", NavbarItem[]> = {
       path: ""
     },
     {
-      name: "របៀបដែលវាដំណើរការ",
+      name: "របៀបដំណើរការ",
       href: "/about-us",
       path: ""
     },
