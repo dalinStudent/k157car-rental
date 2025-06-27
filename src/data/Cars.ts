@@ -23,7 +23,8 @@ export const Cars: Car[] = [
     pricePerWeek: 350,
     pricePerMonth: 700,
     status: CarStatus.Unavailable,
-    rentCount: 7
+    rentCount: 7,
+    minRentalDays: 3,
   },
   {
     id: 2,

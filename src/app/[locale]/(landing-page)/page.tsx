@@ -7,7 +7,7 @@ import type { Locale } from "@/common/types/locale.type";
 import { generateMetaTags } from "@/utils/generate-meta-tags.util";
 
 export async function generateMetadata(props: { params: Promise<{ locale: Locale }> }) {
-  const params = await props.params; // <-- await here!
+  const params = await props.params;
 
   const t = await getTranslations({ locale: params.locale, namespace: "HomePage" });
 

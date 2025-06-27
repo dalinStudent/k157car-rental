@@ -43,5 +43,18 @@
       "title": "Car Rental Services in Phnom Penh | K157 Car Rental Service",
       "description": "From compact cars to luxury SUVs, rent with flexible daily, weekly, or monthly plans. Choose the best ride with K157 Car Rental in Cambodia."
     }
+  },
+  "booking": {
+    "include_price": "Included in the price",
+    "pickup": "Pick Up",
+    "dropoff": "Drop Off",
+    "summary_price": "Price Summary",
+    "daily_rate": "Daily Rate",
+    "weekly_rate": "Weekly Rate",
+    "monthly_rate": "Monthly Rate",
+    "availability": "Availability",
+    "button": {
+      "book": "Book Now"
+    }
   }
 }

@@ -11,13 +11,12 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import React from "react";
 
-import { dmSans, kantumruy, notoSans } from "../fonts";
-import { Navbar } from "../components/Navbar";
+import { dmSans, kantumruy, notoSans } from "@/app/fonts";
+import { Navbar } from "@/app/components/Navbar";
 import { routing } from "@/libs/i18nNavigation";
-import { BackgroundGradientAnimation } from "../components/BackgroundGradientAnimation";
+import { BackgroundGradientAnimation } from "@/app/components/BackgroundGradientAnimation";
 import { Footer } from "@/app/components/Footer";
-
-const WebsiteUrl = "https://nextjs-tailwind-i18n.vercel.app";
+import { WebsiteUrl } from "@/configs";
 
 export async function generateMetadata({
   params,
@@ -26,12 +25,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const messages = await getMessages();
   const { locale } = await params;
-  const ogLocaleMap: Record<string, string> = {
-    en: "en_US",
-    km: "km_KH",
-    zh: "zh_CN",
-  };
-
+  
   return {
     title: messages["title"] || "K157 Car Rental Service",
     description: messages["description"] || "K157 Car Rental Service",
