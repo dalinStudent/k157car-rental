@@ -4,7 +4,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 
 const Service = async () => {
-  const locale = await getLocale() as "en" | "km" | "zh";
+  const locale = (await getLocale()) as "en" | "km" | "zh";
   const features = ServiceFeature[locale];
   const items = ServiceItems[locale];
   const t = await getTranslations({ locale, namespace: "service" });
@@ -30,7 +30,7 @@ const Service = async () => {
           />
         </div>
       </div>
-      <div className="bg-white/50 rounded-xl p-6 space-y-4 text-center">
+      <div className="bg-white/50 rounded-xl p-4 space-y-4 text-center">
         <h2 className={`${fadeIn} text-[26px] font-semibold text-[#2a2f3a]`}>
           {t("title.second")}
         </h2>
@@ -62,27 +62,47 @@ const Service = async () => {
         </div>
       </div>
 
-      <div className="mx-auto py-8 px-4">
-        <div className="rounded-xl p-6 space-y-4">
-          <h3 className="text-[26px] font-semibold text-[#2a2f3a] text-center">
+      <div className="mx-auto sm:px-4 py-8 max-w-6xl">
+        <div className="bg-white/70 rounded-2xl p-4 sm:p-6 sm:p-10 shadow-md space-y-6">
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#2a2f3a] text-center">
             {t("title.third")}
           </h3>
-          <p className="text-gray-600 text-center">{t("sub_title.third")}</p>
+          <p className="text-gray-600 text-center max-w-xl mx-auto">
+            {t("sub_title.third")}
+          </p>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {items.map((item, index) => (
-              <div key={index} className="p-4 space-y-2 text-center">
-                <Image
-                  src={item.iconSrc}
-                  alt="image-service"
-                  width={600}
-                  height={400}
-                  className="object-contain mx-auto"
-                />
-                <h4 className="text-[20px] font-semibold text-[#2a2f3a]">
-                  {item.title}
-                </h4>
-                <p className="text-sm text-gray-600">{item.description}</p>
+              <div
+                key={index}
+                className="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-md overflow-hidden transition hover:shadow-lg"
+              >
+                {/* Left side: text */}
+                <div className="w-full md:w-1/2 p-6 text-center md:text-left">
+                  <div className="flex justify-center md:justify-start">
+                    <Image
+                      src={item.iconSrc}
+                      alt="icon"
+                      width={40}
+                      height={40}
+                      className="object-contain"
+                    />
+                  </div>
+                  <p className="text-[16px] font-semibold text-[#2a2f3a]">
+                    {item.title}
+                  </p>
+                  <p className="text-sm text-gray-600">{item.description}</p>
+                </div>
+
+                <div className="w-full sm:w-1/2 h-64 md:h-auto">
+                  <Image
+                    src={item.imageUrl}
+                    alt="image-service"
+                    width={600}
+                    height={400}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
               </div>
             ))}
           </div>

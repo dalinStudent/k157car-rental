@@ -28,7 +28,7 @@ export const NavbarItems: Record<"en" | "km" | "zh", NavbarItem[]> = {
     {
       name: "Service",
       href: "/service",
-      path: ""
+      path: "/service"
     },
     {
       name: "FAQs",

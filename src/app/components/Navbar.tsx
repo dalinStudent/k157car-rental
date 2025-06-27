@@ -33,7 +33,11 @@ export const Navbar = () => {
           "w-full max-w-[95%]"
         )}
       >
+<<<<<<< HEAD
         <div className="hidden sm:flex items-center gap-6 overflow-hidden">
+=======
+        {/* <div className="hidden lg:flex items-center gap-6 overflow-hidden">
+>>>>>>> cd1fef1 (feat(aboutus): add responsive about us page)
           <div className="flex gap-4 whitespace-nowrap p-2">
             {items.map((item) => (
               <p
@@ -45,7 +49,27 @@ export const Navbar = () => {
               </p>
             ))}
           </div>
-        </div>
+        </div> */}
+        <div className="hidden sm:flex items-center gap-6 overflow-hidden">
+          <div className="flex gap-2 whitespace-nowrap">
+            {items.map((item) => {
+              const isActive = pathname === item.path;
+              return (
+                <button
+                  key={item.name}
+                  onClick={() => router.push(item.path)}
+                  className={`p-2 sm:p-2 rounded-full transition-colors duration-200 cursor-pointer ${
+                    isActive
+                      ? "text-orange-500 font-semibold scale-110"
+                      : "text-white hover:scale-110"
+                  }`}
+                >
+                  <p className="text-sm sm:text-[18px]">{item.name}</p>
+                </button>
+              );
+            })}
+          </div>
+          </div>
 
         <div className="sm:hidden">
           <button onClick={() => setIsMenuOpened(!isMenuOpened)}>
