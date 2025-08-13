@@ -16,7 +16,7 @@ export const WhyUs = () => {
       </div>
 
       <div className="flex flex-row flex-wrap justify-center gap-6">
-        <div className="flex flex-col max-w-[350px]">
+        <div className="flex flex-col items-center text-center max-w-[350px]">
           <Image
             src="/svg/wide-fleet.svg"
             alt="wide-fleet"

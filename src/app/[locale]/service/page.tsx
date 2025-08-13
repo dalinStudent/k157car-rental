@@ -94,7 +94,7 @@ const Service = async () => {
                   <p className="text-sm text-gray-600">{item.description}</p>
                 </div>
 
-                <div className="w-full sm:w-1/2 h-64 md:h-auto">
+                <div className="w-full sm:w-1/2 h-64 md:h-[180px]">
                   <Image
                     src={item.imageUrl ?? ''}
                     alt="image-service"
