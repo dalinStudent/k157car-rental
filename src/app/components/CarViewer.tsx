@@ -35,7 +35,7 @@ export default function CarViewer() {
 
   return (
     <div
-      className="w-[200px] h-[200px] relative"
+      className="w-[500px] h-[200px] relative"
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setDirection("front")}
     >

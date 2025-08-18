@@ -39,13 +39,13 @@ const UserForm = () => {
 
   const handleSubmit = () => {
     console.log("Form submitted:", form);
-    // Here you'd send `form` to your API (e.g., via fetch or axios)
+    
   };
 
   return (
     <div className="max-w-6xl mx-auto grid grid-cols-1 gap-6 p-6 rounded-xl border shadow bg-white/20 backdrop-blur-sm">
       <h2 className="text-2xl font-bold text-gray-800">
-        Identity Verification
+        {t('identity_verification')}
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -53,14 +53,14 @@ const UserForm = () => {
           name="firstName"
           value={form.firstName}
           onChange={handleChange}
-          placeholder="First Name"
+          placeholder={t('first_name')}
           className="p-3 border rounded-md w-full focus:outline-none focus:ring"
         />
         <input
           name="lastName"
           value={form.lastName}
           onChange={handleChange}
-          placeholder="Last Name"
+          placeholder={t('last_name')}
           className="p-3 border rounded-md w-full focus:outline-none focus:ring"
         />
       </div>
@@ -69,21 +69,21 @@ const UserForm = () => {
           name="phone"
           value={form.phone}
           onChange={handleChange}
-          placeholder="Phone Number"
+          placeholder={t('phone_number')}
           className="p-3 border rounded-md w-full focus:outline-none focus:ring"
         />
         <input
           name="email"
           value={form.email}
           onChange={handleChange}
-          placeholder="Email"
+          placeholder={t('email')}
           className="p-3 border rounded-md w-full focus:outline-none focus:ring"
         />
         <input
           name="address"
           value={form.adress}
           onChange={handleChange}
-          placeholder="Address"
+          placeholder={t('address')}
           className="p-3 border rounded-md w-full focus:outline-none focus:ring"
         />
       </div>
@@ -91,7 +91,7 @@ const UserForm = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className="block mb-1 font-medium text-sm">
-            Upload ID Card
+            {t('upload_id')}
           </label>
           <input
             type="file"
@@ -110,7 +110,7 @@ const UserForm = () => {
 
         <div>
           <label className="block mb-1 font-medium text-sm">
-            Upload Driver License
+            {t('upload_driver')}
           </label>
           <input
             type="file"

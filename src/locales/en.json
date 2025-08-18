@@ -56,6 +56,14 @@
     "button": {
       "book": "Book Now",
       "submit": "Submit"
-    }
+    },
+    "identity_verification": "Identity Verification",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "phone_number": "Phone Number",
+    "email": "Email",
+    "address": "Address",
+    "upload_id": "Upload ID Card",
+    "upload_driver": "Upload Driver License"
   }
 }
