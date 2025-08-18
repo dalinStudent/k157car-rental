@@ -56,6 +56,14 @@
     "button": {
       "book": "立即预订",
       "submit": "提交"
-    }
+    },
+    "identity_verification": "身份验证",
+    "first_name": "名",
+    "last_name": "姓",
+    "phone_number": "电话号码",
+    "email": "电子邮件",
+    "address": "地址",
+    "upload_id": "上传身份证",
+    "upload_driver": "驾驶执照"
   }
 } 

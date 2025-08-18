@@ -57,6 +57,14 @@
     "button": {
       "book": "កក់ឥឡូវនេះ",
       "submit": "ដាក់ស្នើ"
-    }
+    },
+    "identity_verification": "ការផ្ទៀងផ្ទាត់អត្តសញ្ញាណ",
+    "first_name": "ឈ្មោះ",
+    "last_name": "ត្រកូល",
+    "phone_number": "លេខទូរស័ព្ទ",
+    "email": "អ៊ីមែល",
+    "address": "អាសយដ្ឋាន",
+    "upload_id": "អត្តសញ្ញាណប័ណ្ណ",
+    "upload_driver": "ប័ណ្ណបើកបរ"
   }
 }
