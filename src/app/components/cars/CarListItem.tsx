@@ -4,16 +4,17 @@ import { DiscountBadge } from "@/app/components/cars/DiscountBadge";
 import { DisplayAmount } from "@/app/components/cars/DisplayAmount";
 import { CarStatus } from "@/common/enums/car-status.enum";
 import { useRouter } from "@/libs/i18nNavigation";
-import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
 type Props = {
   item: Car;
   onClick: () => void;
+  locale: string
 };
 
 export const CarListItem = (props: Props) => {
   const router = useRouter();
-  const locale = useLocale() as "en" | "km" | "zh";
+  const t = useTranslations("booking")
 
   const goToDetailPage = () => {
     router.push(`/cars/${props.item.id}`);
@@ -47,11 +48,25 @@ export const CarListItem = (props: Props) => {
         )}
 
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:pointer-events-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button
-            className="buttons bg-white bg-opacity-90 rounded-lg px-4 py-2 shadow-md text-sm font-semibold text-gray-900 cursor-pointer"
-            onClick={goToDetailPage}
-          >
-            View Details
+          <button className="cta" onClick={goToDetailPage}>
+            <span className="hover-underline-animation">
+              {isAvailable ? t("button.book") : t("button.favorite")}
+            </span>
+            <svg
+              id="arrow-horizontal"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="10"
+              viewBox="0 0 46 16"
+              fill="white"
+            >
+              <path
+                id="Path_10"
+                data-name="Path 10"
+                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                transform="translate(30)"
+              ></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -62,13 +77,6 @@ export const CarListItem = (props: Props) => {
 
       <div className="px-4 py-3 flex items-center justify-between flex-wrap gap-2">
         <DisplayAmount size="xl" item={props.item} />
-        <button
-          type="button"
-          className="w-[32px] aspect-square bg-[#C0C7CD] rounded-full grid place-items-center cursor-pointer hover:bg-[#9AA0A8] transition-all duration-200"
-          onClick={() => props.onClick()}
-        >
-          <Image src="/svg/add.svg" alt="add" width={18} height={18} />
-        </button>
       </div>
     </div>
   );

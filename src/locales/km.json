@@ -56,7 +56,8 @@
     "availability": "កំណត់វេលា",
     "button": {
       "book": "កក់ឥឡូវនេះ",
-      "submit": "ដាក់ស្នើ"
+      "submit": "ដាក់ស្នើ",
+      "favorite": "ចំណូលចិត្ត"
     },
     "identity_verification": "ការផ្ទៀងផ្ទាត់អត្តសញ្ញាណ",
     "first_name": "ឈ្មោះ",

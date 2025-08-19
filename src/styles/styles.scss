@@ -200,3 +200,61 @@
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
 }
+
+.cta {
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  span {
+    padding-bottom: 7px;
+    padding-right: 15px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    svg {
+      transform: translateX(0);
+    }
+
+    .hover-underline-animation::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+
+  &:active {
+    svg {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: variables.$gradient-orange-red;
+  padding-bottom: 20px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: variables.$gradient-orange-red;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+}

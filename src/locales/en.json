@@ -55,7 +55,8 @@
     "availability": "Availability",
     "button": {
       "book": "Book Now",
-      "submit": "Submit"
+      "submit": "Submit",
+       "favorite": "Save Favorite"
     },
     "identity_verification": "Identity Verification",
     "first_name": "First Name",
