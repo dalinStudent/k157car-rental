@@ -5,16 +5,18 @@ import { DisplayAmount } from "@/app/components/cars/DisplayAmount";
 import { CarStatus } from "@/common/enums/car-status.enum";
 import { useRouter } from "@/libs/i18nNavigation";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 type Props = {
   item: Car;
   onClick: () => void;
-  locale: string
+  locale: string;
 };
 
 export const CarListItem = (props: Props) => {
   const router = useRouter();
-  const t = useTranslations("booking")
+  const t = useTranslations("booking");
+  const [showButton, setShowButton] = useState(false);
 
   const goToDetailPage = () => {
     router.push(`/cars/${props.item.id}`);
@@ -23,7 +25,10 @@ export const CarListItem = (props: Props) => {
   const isAvailable = props.item.status === CarStatus.Available;
   return (
     <div className="w-full rounded-2xl border border-[#F5F5F5] overflow-hidden">
-      <div className="relative w-full aspect-video group">
+      <div
+        className="relative w-full aspect-video group"
+        onClick={() => setShowButton((prev) => !prev)}
+      >
         <div
           className={`absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-semibold ${
             isAvailable ? "bg-green-600" : "bg-red-600"
@@ -47,7 +52,13 @@ export const CarListItem = (props: Props) => {
           </div>
         )}
 
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:pointer-events-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:pointer-events-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" > */}
+        <div
+          className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300 
+            ${
+              showButton ? "opacity-100 pointer-events-auto" : "opacity-0"
+            } group-hover:opacity-100 group-hover:pointer-events-auto`}
+        >
           <button className="cta" onClick={goToDetailPage}>
             <span className="hover-underline-animation">
               {isAvailable ? t("button.book") : t("button.favorite")}

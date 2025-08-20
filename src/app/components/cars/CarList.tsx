@@ -55,7 +55,7 @@ export const CarList = (props: Props) => {
     .sort((a, b) => b.rentCount - a.rentCount);
 
   return (
-    <div className="flex flex-col gap-4 px-4 py-4">
+    <div className="flex flex-col gap-8 sm:gap-4 px-4 py-4">
       {categories && (
         <CategoryList
           categories={categories.content}

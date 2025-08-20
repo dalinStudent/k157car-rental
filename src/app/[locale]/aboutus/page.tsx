@@ -7,9 +7,6 @@ const AboutUs = () => {
     <div className="">
       <ImageTitle />
       <WhyUs />
-      <div className="z-0">
-        {/* <CardInfo /> */}
-      </div>
     </div>
   );
 };

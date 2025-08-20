@@ -45,8 +45,8 @@ export const WhyUs = () => {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full max-w-6xl">
-        {/* Left features */}
+      {/* <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full max-w-6xl">
+
         <div className="flex flex-col gap-8 max-w-xs">
           {featuresLeft.map((feature, index) => (
             <div key={index} className="flex flex-col">
@@ -97,7 +97,41 @@ export const WhyUs = () => {
             </div>
           ))}
         </div>
+      </div> */}
+
+<div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 w-full max-w-6xl">
+  {/* Left features */}
+  <div className="flex flex-col gap-6 w-full md:w-1/4 text-center md:text-left">
+    {featuresLeft.map((feature, index) => (
+      <div key={index} className="flex flex-col items-center md:items-start gap-2">
+        <div className="flex items-center justify-center rounded-full bg-white w-10 h-10">
+          <Image src={feature.icon} alt={feature.title} width={28} height={28} />
+        </div>
+        <p className="font-semibold text-lg text-black">{feature.title}</p>
+        <p className="text-gray-600 text-sm">{feature.description}</p>
       </div>
+    ))}
+  </div>
+
+  {/* Lottie */}
+  <div className="w-full md:w-1/2 max-w-md">
+    <LottieService />
+  </div>
+
+  {/* Right features */}
+  <div className="flex flex-col gap-6 w-full md:w-1/4 text-center md:text-left">
+    {featuresRight.map((feature, index) => (
+      <div key={index} className="flex flex-col items-center md:items-start gap-2">
+        <div className="flex items-center justify-center rounded-full bg-white w-10 h-10">
+          <Image src={feature.icon} alt={feature.title} width={28} height={28} />
+        </div>
+        <p className="font-semibold text-lg text-black">{feature.title}</p>
+        <p className="text-gray-600 text-sm">{feature.description}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
     </div>
   );
 };
