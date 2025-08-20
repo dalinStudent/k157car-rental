@@ -2,7 +2,7 @@
 
 import { fadeIn } from "@/configs/animate-css-classes";
 import Image from "next/image";
-import LottieService from "./LottieService";
+import LottieService from "./lotties/LottieService";
 
 const featuresLeft = [
   {

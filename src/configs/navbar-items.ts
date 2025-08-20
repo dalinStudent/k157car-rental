@@ -22,8 +22,8 @@ export const NavbarItems: Record<"en" | "km" | "zh", NavbarItem[]> = {
     },
     {
       name: "How it works",
-      href: "/about-us",
-      path: ""
+      href: "/how-it-work",
+      path: "/howitwork"
     },
     {
       name: "Service",
@@ -33,51 +33,51 @@ export const NavbarItems: Record<"en" | "km" | "zh", NavbarItem[]> = {
     {
       name: "FAQs",
       href: "/faqs",
-      path: ""
+      path: "/faqs"
     },
   ],
   km: [
     {
       name: "អំពីពួកយើង",
       href: "/about-us",
-      path: ""
+      path: "/aboutus"
     },
     {
       name: "របៀបដំណើរការ",
-      href: "/about-us",
-      path: ""
+      href: "/how-it-work",
+      path: "/howitwork"
     },
     {
       name: "សេវាកម្ម",
       href: "/service",
-      path: ""
+      path: "/service"
     },
     {
       name: "FAQs",
       href: "/about-us",
-      path: ""
+      path: "/faqs"
     },
   ],
   zh: [
     {
       name: "关于我们",
       href: "/about-us",
-      path: ""
+      path: "/aboutus"
     },
     {
       name: "工作原理",
-      href: "/service",
-      path: ""
+      href: "/how-it-work",
+      path: "/howitwork"
     },
     {
       name: "我们的服务",
-      href: "/about-us",
-      path: ""
+      href: "/service",
+      path: "/service"
     },
     {
       name: "FAQs",
       href: "/about-us",
-      path: ""
+      path: "/faqs"
     },
   ],
 };
