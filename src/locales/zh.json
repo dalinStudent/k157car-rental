@@ -55,7 +55,8 @@
     "availability": "可用性",
     "button": {
       "book": "立即预订",
-      "submit": "提交"
+      "submit": "提交",
+      "favorite": "最喜欢的"
     },
     "identity_verification": "身份验证",
     "first_name": "名",

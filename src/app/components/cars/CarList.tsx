@@ -87,8 +87,7 @@ export const CarList = (props: Props) => {
                     <CarListItem
                       key={item.id}
                       item={item}
-                      onClick={() => handleOnItemClick(item)}
-                    />
+                      onClick={() => handleOnItemClick(item)} locale={""}                    />
                   </div>
                 );
               })}
