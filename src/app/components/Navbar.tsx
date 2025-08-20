@@ -101,6 +101,29 @@ export const Navbar = () => {
         {isMenuOpened && (
           <div className="sm:hidden absolute top-full mt-2 w-[90%] max-w-xs bg-white text-black rounded-xl shadow-lg z-50 overflow-hidden">
             <div className="flex flex-col p-4 gap-2">
+              <button
+                onClick={() => {
+                  router.push("/");
+                  setIsMenuOpened(false);
+                }}
+                className="text-left px-4 py-2 rounded hover:bg-gray-100/80 cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  color="text-orange-500"
+                >
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </button>
               {items.map((item, index) => (
                 <button
                   key={item.name}

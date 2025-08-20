@@ -12,7 +12,7 @@ export const CardSection = () => {
 
 const items = CardItems[locale]
   return (
-    <div className="mt-12 bg-gray-300 p-16 rounded-lg">
+    <div className="mt-12 bg-gray-300 sm:p-16 py-8 px-4 rounded-lg">
       <h2 className="text-orange-500 text-3xl font-bold text-center mb-12">
         Why Rent with Us
       </h2>
