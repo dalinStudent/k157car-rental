@@ -4,7 +4,7 @@ import CardSection from "@/app/components/howitwork/CardSection";
 import { StepItems } from "@/configs/how-it-work";
 import { useLocale } from "next-intl";
 
-export const HowItWorks = () => {
+const HowItWorks = () => {
   const locale = useLocale() as "en" | "km" | "zh";
   const items = StepItems[locale]
 
