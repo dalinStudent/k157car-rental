@@ -10,6 +10,7 @@ import { Localization } from "./Localization";
 import { usePathname, useRouter } from "@/libs/i18nNavigation";
 import clsx from "clsx";
 import { Hambuger } from "@/app/components/Hambuger";
+import { FavoriteModal } from "./FavoriteModal";
 
 export const Navbar = () => {
   const locale = useLocale() as "en" | "km" | "zh";
@@ -20,6 +21,11 @@ export const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
   const [visibleItems, setVisibleItems] = useState<number>(0);
+  const [favoriteCount, setFavoriteCount] = useState<number>(0);
+  const [showFavoritesModal, setShowFavoritesModal] = useState(false);
+
+  const openFavorites = () => setShowFavoritesModal(true);
+  const closeFavorites = () => setShowFavoritesModal(false);
 
   useEffect(() => {
     if (isMenuOpened) {
@@ -38,6 +44,11 @@ export const Navbar = () => {
     setIsMenuOpened(false);
   }, [pathname]);
 
+useEffect(() => {
+  const stored = JSON.parse(localStorage.getItem("add-to-favorites") || "[]");
+  setFavoriteCount(stored.length);
+}, []);
+
   return (
     <div className="navbar relative z-50">
       <div
@@ -51,7 +62,7 @@ export const Navbar = () => {
           <div className="flex gap-2 whitespace-nowrap">
             <div
               onClick={() => router.push("/")}
-              className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition"
+              className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition mb-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +79,6 @@ export const Navbar = () => {
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                 <polyline points="9 22 9 12 15 12 15 22" />
               </svg>
-              <span className="font-bold text-lg">Home</span>
             </div>
 
             {items.map((item) => {
@@ -160,6 +170,13 @@ export const Navbar = () => {
             showSearch={showSearch}
             setShowSearch={setShowSearch}
             setSearchQuery={setSearchQuery}
+            favoriteCount={favoriteCount}
+            onFavoriteClick={openFavorites}
+            setFavoriteCount={setFavoriteCount}
+          />
+          <FavoriteModal
+            open={showFavoritesModal}
+            onClose={() => setShowFavoritesModal(false)}
           />
           <Localization />
         </div>

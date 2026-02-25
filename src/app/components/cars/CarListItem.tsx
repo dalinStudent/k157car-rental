@@ -5,7 +5,8 @@ import { DisplayAmount } from "@/app/components/cars/DisplayAmount";
 import { CarStatus } from "@/common/enums/car-status.enum";
 import { useRouter } from "@/libs/i18nNavigation";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { appMessage } from "@/utils/messageBox.util";
 
 type Props = {
   item: Car;
@@ -16,10 +17,38 @@ type Props = {
 export const CarListItem = (props: Props) => {
   const router = useRouter();
   const t = useTranslations("booking");
-  const [showButton, setShowButton] = useState(false);
+  const [showButton, setShowButton] = useState<boolean>(false);
+  const [favoriteCount, setFavoriteCount] = useState<number>(0);
+  const [addToCart, setaddToCart] = useState<number>(0);
+
+  const addToFavorite = (carId: number | string) => {
+    let favorites: string[] = JSON.parse(
+      localStorage.getItem("add-to-favorites") || "[]"
+    );
+    const carIdStr = carId.toString();
+    if (!favorites.includes(carIdStr)) {
+      favorites.push(carIdStr);
+      localStorage.setItem("add-to-favorites", JSON.stringify(favorites));
+      setFavoriteCount(favorites.length);
+      appMessage.success("Saved to favorites");
+    } else {
+      appMessage.warning("Already in favorites");
+    }
+  };
+
+  useEffect(() => {
+    const stored: string[] = JSON.parse(
+      localStorage.getItem("add-to-favorites") || "[]"
+    );
+    setFavoriteCount(stored.length);
+  }, []);
 
   const goToDetailPage = () => {
-    router.push(`/cars/${props.item.id}`);
+    if (isAvailable) {
+      router.push(`/cars/${props.item.id}`);
+    } else {
+      addToFavorite(props.item.id);
+    }
   };
 
   const isAvailable = props.item.status === CarStatus.Available;

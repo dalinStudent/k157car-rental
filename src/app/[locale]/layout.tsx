@@ -17,6 +17,7 @@ import { routing } from "@/libs/i18nNavigation";
 import { BackgroundGradientAnimation } from "@/app/components/BackgroundGradientAnimation";
 import { Footer } from "@/app/components/Footer";
 import { WebsiteUrl } from "@/configs";
+import MessageInitializer from "@/app/components/MessageInitializer";
 
 export async function generateMetadata({
   params,
@@ -94,6 +95,7 @@ export default async function RootLayout(props: {
         <div className="fixed inset-0 -z-10 w-full h-full overflow-hidden">
           <BackgroundGradientAnimation />
         </div>
+         <MessageInitializer />
 
         <div className="relative z-10 flex-grow">
           <NextIntlClientProvider messages={messages}>
