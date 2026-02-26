@@ -3,23 +3,22 @@
 import { useRouter } from "next/navigation";
 import { fadeIn } from "@/configs/animate-css-classes";
 import { CardItems } from "@/configs/how-it-work";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 
 export const CardSection = () => {
   const router = useRouter();
   const locale = useLocale() as "en" | "km" | "zh"
+  const t = useTranslations('how_it_works')
 
 const items = CardItems[locale]
   return (
     <div className="mt-12 bg-gray-300 sm:p-16 py-8 px-4 rounded-lg">
       <h2 className="text-orange-500 text-3xl font-bold text-center mb-12">
-        Why Rent with Us
+        {t('why_us')}
       </h2>
       <p className="text-center text-gray-700 mb-8 max-w-2xl mx-auto">
-        Experience hassle-free car rentals with fast booking, a wide selection
-        of vehicles, and secure payments. We make getting on the road easy and
-        worry-free.
+        {t('description')}
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {items.map((card, index) => (

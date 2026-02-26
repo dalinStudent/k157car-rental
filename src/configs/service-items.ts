@@ -152,47 +152,55 @@ export const ServiceItems: Record<"en" | "km" | "zh", ServiceItem[]> = {
       title: "រកមើលនិងជ្រើសរើស",
       description:
         "រុករកជម្រើសដ៏ធំទូលាយរបស់យើងនៃយានជំនិះ ហើយជ្រើសរើសរថយន្តដែលសាកសមនឹងការធ្វើដំណើររបស់អ្នក។",
-      iconSrc: "/images/services/trip.png",
+      iconSrc: "/svg/icons/browse.svg",
+      imageUrl: "/images/services/explain.png",
     },
     {
       title: "កក់តាមអ៊ីនធឺណិត",
       description:
         "កក់យានយន្តរបស់អ្នកក្នុងរយៈពេលប៉ុន្មាននាទី តាមរយៈវេទិកាអនឡាញដែលងាយស្រួលប្រើរបស់យើង។",
-      iconSrc: "/images/services/book-online.png",
+      iconSrc: "/svg/icons/booked.svg",
+      imageUrl: "/images/services/book-online.png",
     },
     {
       title: "ទទួល ឬ ដឹកជញ្ជូន",
       description:
         "យកឡានរបស់អ្នក ឬដឹកជញ្ជូនវាទៅទីតាំងដែលអ្នកពេញចិត្ត រួមទាំងព្រលានយន្តហោះផងដែរ។",
-      iconSrc: "/images/services/contract.png",
+      iconSrc: "/svg/icons/delivery.svg",
+      imageUrl: "/images/services/enjoy-ride.png",
     },
     {
       title: "សូមរីករាយជាមួយការជិះ",
       description:
         "បើកបរប្រកបដោយទំនុកចិត្តជាមួយនឹងការធានារ៉ាប់រងពេញលេញ និងការគាំទ្រ 24/7 ទូទាំងការជួលរបស់អ្នក។",
-      iconSrc: "/images/services/enjoy.png",
+      iconSrc: "/svg/icons/drive.svg",
+      imageUrl: "/images/services/trip.png",
     },
   ],
   zh: [
     {
       title: "浏览并选择",
       description: "浏览我们丰富的车辆选择，选择适合您行程的车辆.",
-      iconSrc: "/images/services/trip.png",
+      iconSrc: "/svg/icons/browse.svg",
+      imageUrl: "/images/services/explain.png",
     },
     {
       title: "在线预订",
       description: "通过我们易于使用的在线平台，几分钟内即可预订您的车辆。",
-      iconSrc: "/images/services/book-online.png",
+      iconSrc: "/svg/icons/booked.svg",
+      imageUrl: "/images/services/book-online.png",
     },
     {
       title: "自取或送货",
       description: "领取您的汽车或将其送到您喜欢的地点，包括机场。",
-      iconSrc: "/images/service/contract.png",
+      iconSrc: "/svg/icons/delivery.svg",
+      imageUrl: "/images/services/enjoy-ride.png",
     },
     {
       title: "享受旅程",
       description: "租车期间，全额保险和全天候支持让您安心驾驶.",
-      iconSrc: "/images/services/enjoy.png",
+      iconSrc: "/svg/icons/drive.svg",
+      imageUrl: "/images/services/trip.png",
     },
   ],
 };

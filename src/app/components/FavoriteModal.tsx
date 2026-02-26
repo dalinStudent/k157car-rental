@@ -7,6 +7,7 @@ import { Car } from "@/types/car.type";
 import { Cars } from "@/data/Cars";
 import { DeleteOutlined } from "@ant-design/icons";
 import { DiscountType } from "@/common/enums/discount-type.enum";
+import { useLocale, useTranslations } from "next-intl";
 
 interface FavoriteModalProps {
   open: boolean;
@@ -27,6 +28,7 @@ const getFavoriteCars = (): Car[] => {
 
 export const FavoriteModal = ({ open, onClose }: FavoriteModalProps) => {
   const [favorites, setFavorites] = useState<Car[]>([]);
+  const t = useTranslations("landing");
 
   useEffect(() => {
     if (open) {
@@ -44,7 +46,7 @@ export const FavoriteModal = ({ open, onClose }: FavoriteModalProps) => {
   };
 
   return (
-    <Modal open={open} onCancel={onClose} title="My Favorites" footer={null}>
+    <Modal open={open} onCancel={onClose} title={t('my_favorites')} footer={null}>
       {favorites.length === 0 ? (
         <p>No favorites yet.</p>
       ) : (

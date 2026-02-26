@@ -20,10 +20,11 @@
     "condition": "健康）状况",
     "reliable": "可靠的",
     "affordable": "价格合理",
-    "convenient": "抱歉"
+    "convenient": "抱歉",
+    "my_favorites": "我的收藏"
   },
   "footer": {
-    "powered_by" : {
+    "powered_by": {
       "title": "Powered by",
       "company": "Hoem Dalin - hoemdalin@gmail.com"
     }
@@ -66,5 +67,32 @@
     "address": "地址",
     "upload_id": "上传身份证",
     "upload_driver": "驾驶执照"
+  },
+  "about_us": {
+    "why_choose_us": "为什么选择我们",
+    "description": "享受快捷的租车体验：预订流程简便、车型选择丰富、支付环境安全。我们提供 24/7 全天候客户支持与精心保养的车辆，致力于为您提供最轻松、无忧的出行服务。",
+    "features": {
+      "wide_fleet": "车型丰富",
+      "reliable_service": "服务可靠",
+      "support": "24/7 全天候支持",
+      "trust_maintenance": "诚信保养"
+    },
+    "features_left": {
+      "wide_fleet": "车型丰富",
+      "description_wide": "从经济型到豪华型，我们应有尽有。",
+      "reliable_service": "服务可靠",
+      "description_service": "车辆保养良好，安全可靠"
+    },
+    "features_right": {
+      "support": "24/7 全天候支持",
+      "description_support": "随时随地，竭诚为您服务",
+      "trust_maintenance": "诚信保养",
+      "description_trust": "我们的车辆均经过定期技术检测"
+    }
+  },
+  "how_it_works": {
+    "title": "工作原理",
+    "why_us": "选择我们的理由",
+    "description": "享受快捷的租车体验：预订流程简便、车型选择丰富、支付环境安全。我们致力于为您提供最轻松、无忧的出行服务，让您即刻启程。"
   }
-} 
+}

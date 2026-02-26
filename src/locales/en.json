@@ -20,7 +20,8 @@
     "condition": "Condition",
     "reliable": "Reliable",
     "affordable": "Affordable",
-    "convenient": "Convenient"
+    "convenient": "Convenient",
+    "my_favorite": "My Favorites"
   },
   "footer": {
     "powered_by": {
@@ -56,7 +57,7 @@
     "button": {
       "book": "Book Now",
       "submit": "Submit",
-       "favorite": "Save Favorite"
+      "favorite": "Save Favorite"
     },
     "identity_verification": "Identity Verification",
     "first_name": "First Name",
@@ -66,5 +67,26 @@
     "address": "Address",
     "upload_id": "Upload ID Card",
     "upload_driver": "Upload Driver License"
+  },
+  "about_us": {
+    "why_choose_us": "Why Choose Us",
+    "description": "We offer hassle-free booking, 24/7 customer support, and well-maintained vehicles for a smooth and enjoyable rental experience.",
+    "features_left": {
+      "wide_fleet": "Wide Fleet",
+      "description_wide": "Compact to luxury, we have it all.",
+      "reliable_service": "Reliable Service",
+      "description_service": "Well-maintained and safe vehicles."
+    },
+    "features_right": {
+      "support": "24/7 Support",
+       "description_support": "We’re here any time you need us.",
+      "trust_maintenance": "Trust Maintenance",
+       "description_trust": "Our vehicles go through regular service checks."
+    }
+  },
+  "how_it_works": {
+    "title": "How It Works",
+    "why_us": "Why Rent With Us",
+    "description": "Experience hassle-free car rentals with fast booking, a wide selection of vehicles, and secure payments. We make getting on the road easy and worry-free."
   }
 }

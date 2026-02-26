@@ -10,7 +10,7 @@ import { verifySession } from '@/libs/session';
 const intlMiddleware = createMiddleware(routing);
 const protectedRoutes = ['/'];
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
 	const path = request.nextUrl.pathname;
 	if (path === '/sitemap.xml' || path === '/robots.txt') {
 		return NextResponse.next();

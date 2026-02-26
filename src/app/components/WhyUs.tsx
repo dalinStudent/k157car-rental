@@ -3,45 +3,48 @@
 import { fadeIn } from "@/configs/animate-css-classes";
 import Image from "next/image";
 import LottieService from "./lotties/LottieService";
+import { useLocale, useTranslations } from "next-intl";
 
-const featuresLeft = [
+export const WhyUs = () => {
+  const locale = useLocale() as "en" | "km" | "zh"
+  const t = useTranslations("about_us")
+
+  const featuresLeft = [
   {
     icon: "/svg/wide-fleet.svg",
-    title: "Wide Fleet",
-    description: "Compact to luxury, we have it all.",
+    title: t('features_left.wide_fleet'),
+    description: t('features_left.description_wide'),
   },
   {
     icon: "/svg/setting.svg",
-    title: "Reliable Service",
-    description: "Well-maintained and safe vehicles.",
+    title: t('features_left.reliable_service'),
+    description: t('features_left.description_service'),
   },
 ];
 
 const featuresRight = [
   {
     icon: "/svg/call.svg",
-    title: "24/7 Support",
-    description: "We’re here any time you need us.",
+    title: t('features_right.support'),
+    description: t('features_right.description_support'),
   },
   {
     icon: "/svg/setting.svg",
-    title: "Trusted Maintenance",
-    description: "Our vehicles go through regular service checks.",
+    title: t('features_right.trust_maintenance'),
+    description: t('features_right.description_trust'),
   },
 ];
 
-export const WhyUs = () => {
   return (
     <div className="w-full px-4 pt-14 flex flex-col items-center">
       <div className="max-w-xl text-center mb-12">
         <h1
           className={`${fadeIn} font-bold text-[32px] sm:text-[40px] text-orange-500`}
         >
-          Why Choose Us
+          {t('why_choose_us')}
         </h1>
         <p className="text-white-700 mt-2">
-          We offer hassle-free booking, 24/7 customer support, and
-          well-maintained vehicles for a smooth and enjoyable rental experience.
+          {t('description')}
         </p>
       </div>
 
