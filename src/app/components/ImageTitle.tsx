@@ -12,7 +12,7 @@ const ImageTitle = () => {
         src="/images/about_banner.jpg"
         alt="car-rental"
         fill
-        className="object-cover object-center filter blur-[4px]"
+        className="object-cover object-center filter blur-[2px]"
       />
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 mt-5">
         <h1

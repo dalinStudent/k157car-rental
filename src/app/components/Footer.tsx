@@ -3,13 +3,18 @@ import { BtnScrollToTop } from "./BtnScrollToTop";
 import { SocialItems } from "@/configs/social-items";
 import { fadeIn } from "@/configs/animate-css-classes";
 import { PoweredBy } from "./PoweredBy";
+import { useLocale } from "next-intl";
+import { NavbarItems } from "@/configs/navbar-items";
 
 export const Footer = () => {
+  const locale = useLocale() as "en" | "km" | "zh"
+  const items = NavbarItems[locale];
+
   return (
     <footer className="w-full bg-gray-100 rounded-t-xl mt-[150px] px-4 py-8">
       <div className="flex flex-col items-center gap-4 mb-6">
         <Image
-          src="/images/logo.jpg"
+          src="/images/car-logo.png"
           alt="logo"
           width={100}
           height={100}
@@ -35,18 +40,9 @@ export const Footer = () => {
 
       <div className="mx-auto w-full max-w-7xl px-4">
         <nav className="mb-6 flex flex-wrap justify-center gap-4 text-sm text-gray-700 sm:justify-start sm:gap-6 md:text-base">
-          <a href="/" className="hover:underline">
-            Home
-          </a>
-          <a href="/aboutus" className="hover:underline">
-            About
-          </a>
-          <a href="/service" className="hover:underline">
-            Services
-          </a>
-          <a href="/contact" className="hover:underline">
-            Contact
-          </a>
+          {items.map((item) => (
+            <a href={item.path} className="hover:underline">{item.name}</a>
+          ))}
         </nav>
 
         <div className="border-t border-white/10 pt-6">
