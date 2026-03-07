@@ -41,7 +41,7 @@ export const Footer = () => {
       <div className="mx-auto w-full max-w-7xl px-4">
         <nav className="mb-6 flex flex-wrap justify-center gap-4 text-sm text-gray-700 sm:justify-start sm:gap-6 md:text-base">
           {items.map((item) => (
-            <a href={item.path} className="hover:underline">{item.name}</a>
+            <a key={item.name} href={item.path} className="hover:underline">{item.name}</a>
           ))}
         </nav>
 

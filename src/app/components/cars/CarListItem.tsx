@@ -18,7 +18,15 @@ export const CarListItem = (props: Props) => {
   const router = useRouter();
   const t = useTranslations("booking");
   const [showButton, setShowButton] = useState<boolean>(false);
-  const [favoriteCount, setFavoriteCount] = useState<number>(0);
+  const [favoriteCount, setFavoriteCount] = useState<number>(() => {
+    if (typeof window === "undefined") return 0;
+
+    const stored: string[] = JSON.parse(
+      localStorage.getItem("add-to-favorites") || "[]"
+    );
+
+    return stored.length;
+  });
   const [addToCart, setaddToCart] = useState<number>(0);
 
   const addToFavorite = (carId: number | string) => {
@@ -35,13 +43,6 @@ export const CarListItem = (props: Props) => {
       appMessage.warning("Already in favorites");
     }
   };
-
-  useEffect(() => {
-    const stored: string[] = JSON.parse(
-      localStorage.getItem("add-to-favorites") || "[]"
-    );
-    setFavoriteCount(stored.length);
-  }, []);
 
   const goToDetailPage = () => {
     if (isAvailable) {

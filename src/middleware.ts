@@ -1,4 +1,3 @@
-// eslint-disable-next-line unicorn/prefer-node-protocol
 import { Buffer } from 'buffer';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';

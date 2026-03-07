@@ -7,6 +7,7 @@ import { Car } from "@/types/car.type";
 import { Cars } from "@/data/Cars";
 import { DeleteOutlined } from "@ant-design/icons";
 import { DiscountType } from "@/common/enums/discount-type.enum";
+import Image from "next/image";
 
 interface FavoriteModalProps {
   open: boolean;
@@ -29,10 +30,12 @@ export const FavoriteModal = ({ open, onClose }: FavoriteModalProps) => {
   const [favorites, setFavorites] = useState<Car[]>([]);
 
   useEffect(() => {
-    if (open) {
+    if (!open) return;
+
+    setTimeout(() => {
       const favoriteCars = getFavoriteCars();
       setFavorites(favoriteCars);
-    }
+    }, 0);
   }, [open]);
 
   const removeFavorite = (id: number) => {
@@ -53,7 +56,7 @@ export const FavoriteModal = ({ open, onClose }: FavoriteModalProps) => {
             key={car.id}
             className="flex justify-between items-center bg-white shadow-md p-4 mt-4 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow duration-300"
           >
-            <img
+            <Image
               src={car.imageUrl}
               alt={car.name}
               className="max-w-[200px] object-cover rounded-lg flex-shrink-0"

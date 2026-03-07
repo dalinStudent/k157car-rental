@@ -100,7 +100,7 @@ const UserForm = () => {
             className="block w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:bg-blue-100 file:text-blue-800 hover:file:bg-blue-200"
           />
           {idPreview && (
-            <img
+            <Image
               src={idPreview}
               alt="ID Card Preview"
               className="mt-2 rounded-md max-h-52 w-full object-cover"
@@ -119,7 +119,7 @@ const UserForm = () => {
             className="block w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:bg-green-100 file:text-green-800 hover:file:bg-green-200"
           />
           {licensePreview && (
-            <img
+            <Image
               src={licensePreview}
               alt="Driver License Preview"
               className="mt-2 rounded-md max-h-52 w-full object-cover"

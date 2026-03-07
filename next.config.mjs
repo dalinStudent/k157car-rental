@@ -9,9 +9,6 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	eslint: {
-		dirs: ['.'],
-	},
 	output: 'standalone',
 	reactStrictMode: true,
 	poweredByHeader: false,

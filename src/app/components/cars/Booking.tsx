@@ -1,4 +1,5 @@
 import { BookingData, BookingInfo } from "@/types/car.type";
+import Image from "next/image";
 import { useState } from "react";
 
 const BookingPage = ({ car }: { car: BookingInfo }) => {
@@ -45,7 +46,7 @@ const BookingPage = ({ car }: { car: BookingInfo }) => {
     const price = calculatePrice(newBooking.startDate, newBooking.endDate);
     setTotalPrice(price);
   };
-  
+
   const onBook = () => {
     if (!booking.startDate || !booking.endDate) {
       setError("Please select start and end date.");
@@ -57,7 +58,6 @@ const BookingPage = ({ car }: { car: BookingInfo }) => {
         booking.endDate
       } for $${totalPrice.toFixed(2)}`
     );
-    // Here add to cart or API call logic
   };
 
   return (
@@ -83,7 +83,7 @@ const BookingPage = ({ car }: { car: BookingInfo }) => {
       {/* Images */}
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {car.images.map((img, i) => (
-          <img
+          <Image
             key={i}
             src={img}
             alt={`${car.brand} ${car.model} image ${i + 1}`}
@@ -136,7 +136,7 @@ const BookingPage = ({ car }: { car: BookingInfo }) => {
           disabled={!!error || totalPrice <= 0}
           className={`mt-4 px-6 py-3 rounded bg-orange-500 text-white font-semibold hover:bg-orange-600 transition disabled:opacity-50 disabled:cursor-not-allowed`}
         >
-          Book Now1
+          Book Now
         </button>
       </section>
     </div>
